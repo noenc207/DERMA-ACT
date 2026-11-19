@@ -6,7 +6,7 @@ Raw dermoscopic images, per-image metadata CSVs, trained model checkpoints (`.ck
 
 ## 1. Upstream Dataset Source & License
 
-- **Dataset:** **ISIC 2019 Challenge Training Set** (`25,331` JPEG dermoscopic images across `8` diagnostic columns; `7`-class benchmark formulation after excluding the unannotated `UNK` column per `configs/dataset/isic2019.yaml`)
+- **Dataset:** **ISIC 2019 Challenge Training Set** (`25,331` JPEG dermoscopic images across `8` active diagnostic columns + zero-count `UNK`; `7`-class benchmark formulation merging `AK` [`867`] + `SCC` [`628`] into `AKIEC` [`1,495`])
 - **Official Challenge Portal:** [https://challenge.isic-archive.com/data/#2019](https://challenge.isic-archive.com/data/#2019)
 - **Official License:** **`CC-BY-NC 4.0`** (Creative Commons Attribution–NonCommercial 4.0 International)
 - **Terms of Use:** [https://challenge.isic-archive.com/terms-of-use/](https://challenge.isic-archive.com/terms-of-use/)

@@ -1,4 +1,7 @@
-# Regenerable Benchmark LaTeX Tables & Highlights
+# Supplementary Benchmark Tables & Highlights (`supplementary/`)
 
-- `HIGHLIGHTS.txt`: Plain-text study highlights.
-- `tables/`: `13` LaTeX tables (`tab1`–`tab10`, `tab_s1`, `tab_s2`, `tab_s5`) corresponding to pre-submission revision V3.2.1. Can be regenerated via `python scripts/generate_tables.py --out-dir ./outputs/tables`.
+Contains the regenerable LaTeX benchmark tables (`tables/tab1`–`tab10`, `tab_s1`, `tab_s2`, `tab_s5`) and concise research highlights (`HIGHLIGHTS.txt`) supporting the DERMA-ACT V2 study.
+
+- **Regeneration Command (`VERIFIED`):** `python scripts/generate_tables.py --out-dir ./outputs/tables`
+- **Exclusion Boundary:** Unpublished manuscript source files (`main.tex`, `supplementary_materials.tex`, compiled PDFs, `Cover_Letter.docx`, `Highlights.docx`) are excluded from this public repository (see [`../LICENSE_STATUS.md`](../LICENSE_STATUS.md)).
+- **Interactive Verification:** See [`../notebooks/06_Reproduce_Research_Tables_and_Figures.ipynb`](../notebooks/06_Reproduce_Research_Tables_and_Figures.ipynb).

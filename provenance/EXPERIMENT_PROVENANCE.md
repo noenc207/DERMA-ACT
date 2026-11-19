@@ -1,7 +1,7 @@
 # Experiment Provenance (`DERMA-ACT V2`)
 
-- **Frozen Scientific Record:** `PAPER_DRAFT_Q2_V3_2` (preserved byte-for-byte in workspace).
-- **Current Pre-Submission Candidate:** `PAPER_DRAFT_Q2_V3_2_1_PRE_SUBMISSION` (*Biomedical Signal Processing and Control* candidate revision with resolved author metadata and Declarations).
+- **Frozen Scientific Record:** `PAPER_DRAFT_Q2_V3_2` (preserved byte-for-byte in the private historical manuscript archive outside the public repository).
+- **Current Pre-Submission Candidate:** `PAPER_DRAFT_Q2_V3_2_1_PRE_SUBMISSION` (*Biomedical Signal Processing and Control* candidate revision with resolved author metadata and Declarations; stored privately outside the public code release).
 - **Version-Controlled Pure Aggregate Result Ledgers (under `research/derma_act/`):**
   - `evidence/v1/FINAL_RISK_COST_TABLE.csv`: V1 vs fixed policy trajectories (`B = 1..5`).
   - `p5_4_independent_policy_validation/P5_4_BENCHMARK_ANALYSIS.json`: Exact McNemar & Holm-Bonferroni statistics (`p_adj = 0.3185`, reported `0.319` at `B = 5` vs `CAL-Stop`).

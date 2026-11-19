@@ -1,4 +1,6 @@
-# Experiment Results & MLflow Exclusion Notice
+# Results Summary (`results/`)
 
-- **Aggregate Results (`research/derma_act/`):** Pure aggregate CSV and JSON summaries for V1 risk-cost (`FINAL_RISK_COST_TABLE.csv`), `P5.4` benchmark analysis, `P5.5` decision-flip cluster audit, `P5.6` `A7`/`A9` & action quality audits, `P7.1` split-conformal coverage, `Phase F` restricted 5-action ablation, and `Phase G` Mondrian conformal analysis are staged under `research/derma_act/`.
-- **MLflow Tracking Database (`results/sanitized_mlflow_summary.json`):** The original local SQLite file (`mlflow.db`) has been **excluded** from `P8_10_CLEAN_RELEASE` because it embeds local Windows filesystem URIs, username tags, and 7 early 1-epoch baseline scaffold runs containing **0 logged metrics** (not needed to reproduce any V3.2 manuscript result). A scrubbed summary is provided in `results/sanitized_mlflow_summary.json`. Excluding `mlflow.db` from this clean release does **not** erase prior historical remote Git exposure already assessed in `P8.7` and `P8.8`.
+Contains sanitized, non-sensitive experiment-tracking summaries included in the public clean-room repository.
+
+- **`sanitized_mlflow_summary.json`:** Audited metadata digest confirming that local legacy `mlflow.db` contained only early 1-epoch test runs (`0` logged benchmark metrics) and is excluded from public Git distribution.
+- **Authoritative Benchmark Metrics:** Pure aggregate CSV/JSON audit ledgers reside under [`../research/README.md`](../research/README.md) and [`../data/README.md`](../data/README.md), and regenerable LaTeX tables live in [`../supplementary/README.md`](../supplementary/README.md).

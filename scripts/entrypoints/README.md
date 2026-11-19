@@ -1,3 +1,4 @@
-# Entrypoint Scripts
+# Entrypoint Scripts (`scripts/entrypoints/`)
 
-Demo launcher (`RUN_DEMO.ps1`) and multimodal pilot runner (`run_pilot.py`).
+- **Purpose:** Contains local interactive demo and pilot launchers (`RUN_DEMO.ps1`, `run_pilot.py`) that depend on local checkpoints and private runtime assets (`REQUIRES_MODEL_ARTIFACT`, local workspace only).
+- **Public Entry Points:** Use the documented commands in [`../README.md`](../README.md) or the curated suite in [`../../notebooks/README.md`](../../notebooks/README.md).

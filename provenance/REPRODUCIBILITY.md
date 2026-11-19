@@ -2,11 +2,11 @@
 
 ## 1. Verified Execution Environment
 
-Recorded directly in the local Windows AMD64 workspace during `P8.10` / `P8.11` verification:
+Recorded directly in the local Windows AMD64 workspace during `P8.10`–`P8.12` verification:
 
 - **Python:** `3.11.9` (`>=3.11`)
-- **Key Installed Package Versions:**
-  - `torch`: `2.5.1+cu121` (CUDA available locally; CPU supported for unit tests and aggregate scripts)
+- **Key Installed Core Package Versions:**
+  - `torch`: `2.5.1+cu121`, `torchvision`: `0.20.1+cu121` (CUDA `12.1` available locally; CPU supported for unit tests, aggregate scripts, and notebooks)
   - `numpy`: `2.4.6`
   - `pandas`: `3.0.5`
   - `scipy`: `1.17.1`
@@ -16,8 +16,11 @@ Recorded directly in the local Windows AMD64 workspace during `P8.10` / `P8.11` 
   - `opencv-python`: `5.0.0.93`
   - `albumentations`: `1.3.1`
   - `PyYAML`: `6.0.3`
+  - `hydra-core`: `1.3.5`
   - `pydantic`: `2.13.4`
   - `pytest`: `9.1.1`
+- **Optional Notebook Toolchain (`requirements-notebooks.txt`):**
+  - `jupyter`: `1.1.1`, `ipykernel`: `7.4.0`, `nbformat`: `5.11.1`, `nbclient`: `0.11.0`, `nbconvert`: `7.17.2`, `matplotlib`: `3.11.1`, `pandas`: `3.0.5`
 
 ## 2. Established Seeds & Frozen Evaluation Artifacts
 

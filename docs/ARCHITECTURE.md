@@ -7,7 +7,7 @@ This summary reflects verified DERMA-ACT V2 module implementations in `src/modul
    - `A0`: Global baseline view (`Resize(291) -> CenterCrop(224)` with ImageNet normalization).
    - `A1`–`A6`: Deterministic spatial crops (center, border, upper, lower, left, right) followed by `Resize(224)` and ImageNet normalization.
    - `A7`: High-frequency Gabor texture bank (`np.uint8` saturation/zero-collapse flaw documented in [docs/LIMITATIONS.md](LIMITATIONS.md)).
-   - `A8`: Color-channel suppression.
+   - `A8`: Shades-of-Gray color constancy normalization ($p=6$, `ObservationAction.COLOR_NORMALIZED`; legacy display token `ACTION_DISPLAY['A8'] = 'Color Suppressed'`).
    - `A9`: Deterministic morphological dark-structure closing/inpainting mask (non-semantic artifact suppression, not an anatomical hair detector).
 3. **28-D State Representation (`research/derma_act/core/state.py`):** Concatenates current 7-class fused probabilities, 3 scalar uncertainty descriptors (Shannon entropy with `EPS=1e-12`, max confidence, top-2 margin), 9-D acquisition history vector, and 9-D remaining candidate mask enforcing `history[k] + mask[k] = 1`.
 4. **Recursive Arithmetic Probability Fusion (`research/derma_act/core/fusion.py`):** Updates $p_{t+1} = (b \cdot p_t + p_{\mathrm{cand}}) / (b + 1)$ for $b \ge 1$ fused observations (explicit running arithmetic mean across deterministically derived views, **not** Bayesian posterior inference).
