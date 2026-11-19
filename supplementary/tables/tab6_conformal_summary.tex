@@ -1,0 +1,38 @@
+\begin{table}[!htbp]
+\centering
+\caption{Group-disjoint split-conformal prediction evaluation on global-view ($A_0$) held-out test images ($\alpha = 0.10$; exact order statistic $k^* = \lceil (703+1)(1-0.10) \rceil = 634$; $q^* = 0.904267$, inclusion cutoff $1-q^* = 0.095733$). Bootstrap intervals reflect $B=2{,}000$ cluster-stratified replicates across $K=1{,}972$ grouping units.}
+\label{tab:conformal_summary}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\multicolumn{5}{@{}l}{\textbf{Panel A: Marginal, Multi-Estimand Group Coverage, and Partition Sensitivity}} \\
+\midrule
+Estimand / Quantity & Numerator / Denominator & Estimate & 95\% Cluster CI / Range & Set-Size Distribution ($N=3{,}686$) \\
+\midrule
+Image-Weighted Marginal Coverage & 3,342 / 3,686 & 90.67\% & [89.14, 92.12] & $|\Gamma|=1$ (Singletons): 1,404 (38.09\%) \\
+Singleton-Group Images ($k=1$) & 1,164 / 1,226 & 94.94\% & [93.67, 96.11] & $|\Gamma|=2$: 1,409 (38.23\%) \\
+Multi-Image-Group Photos ($k \ge 2$) & 2,178 / 2,460 & 88.54\% & [86.39, 90.62] & $|\Gamma|=3$: 654 (17.74\%) \\
+Group All-Images-Covered & 1,770 / 1,972 & 89.76\% & [88.44, 91.08] & $|\Gamma|=4$: 185 (5.02\%) \\
+Group Any-Image-Covered & 1,870 / 1,972 & 94.83\% & [93.76, 95.74] & $|\Gamma|=5$: 33 (0.90\%); $|\Gamma|=6$: 1 (0.03\%) \\
+Equal-Cluster-Weighted Mean & Mean over 1,972 groups & 92.80\% & [91.71, 93.80] & $|\Gamma|=0$ (Empty): 0 (0.00\%) \\
+Mean Prediction Set Size & 7,095 / 3,686 classes & 1.9249 & [1.8823, 1.9704] & SE ratio (cluster / naive i.i.d.) = 1.61$\times$ \\
+1,000 Group Splits ($k=634$) & 1,000 seeds ($0\text{--}999$) & Mean 90.60\% & [86.14\%, 92.59\%] & 24.5\% below 90\% target \\
+\midrule
+\multicolumn{5}{@{}l}{\textbf{Panel B: Class-Conditional Coverage and Set Efficiency Disparity (Target = 90.0\%)}} \\
+\midrule
+Class (Group Count) & Covered / $n$ & Coverage [95\% Cluster CI] & Gap vs 90\% (pp) & Mean Set Size [95\% CI] (Singleton \%) \\
+\midrule
+AKIEC ($K=76$ groups) & 164 / 221 & 74.21\% [64.73, 83.16] & -15.79 & 2.199 [2.000, 2.401] (22.2\%) \\
+DF$^\dagger$ ($K=11$ groups) & 21 / 25 & 84.00\% [62.95, 100.00] & -6.00 & 1.880 [1.348, 2.458] (48.0\%) \\
+BKL ($K=221$ groups) & 335 / 398 & 84.17\% [78.80, 89.17] & -5.83 & 2.050 [1.933, 2.165] (32.7\%) \\
+MEL ($K=232$ groups) & 610 / 686 & 88.92\% [84.42, 93.06] & -1.08 & 2.093 [1.978, 2.229] (29.4\%) \\
+BCC ($K=171$ groups) & 430 / 466 & 92.27\% [88.09, 95.74] & +2.27 & 1.891 [1.759, 2.023] (42.7\%) \\
+NV ($K=1,249$ groups) & 1,763 / 1,871 & 94.23\% [92.84, 95.59] & +4.23 & 1.818 [1.768, 1.871] (42.6\%) \\
+VASC$^\dagger$ ($K=12$ groups) & 19 / 19 & 100.00\% [100.00, 100.00] & +10.00 & 1.474 [1.000, 2.211] (78.9\%) \\
+\bottomrule
+\multicolumn{5}{@{}l}{\footnotesize $^\dagger$Sparse stratum ($n \le 30$). Group-disjoint splits do not establish patient-level independence or within-group exchangeability.}
+\end{tabular}%
+}
+\end{table}

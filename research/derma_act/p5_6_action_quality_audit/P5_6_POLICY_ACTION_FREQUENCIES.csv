@@ -1,0 +1,11 @@
+action_token,canonical_name,display_name,action_category,total_selections,selection_share_pct,share_of_virtual_actions_pct,unique_images_exposed,cohort_exposure_pct,mean_selections_per_image,median_selections_per_image,step_1_selections,step_2_selections,step_3_selections,step_4_selections,step_5_selections,fixed_comparator_status
+A0,global_view,A0: Global View,Baseline Global View,3686,100.0,0.0,3686,100.0,1.0,1.0,0,0,0,0,0,Baseline (Included)
+A1,center_zoom,A1: Center Zoom,Spatial / Geometric,3344,22.57171785352683,22.57171785352683,3344,90.72164948453609,1.0,1.0,1602,863,659,183,37,Included
+A2,border_zoom,A2: Central-Mask Border View,Spatial / Geometric,126,0.850489368882889,0.850489368882889,126,3.41833966359197,1.0,1.0,0,0,0,54,72,Excluded
+A3,upper_region,A3: Upper Region,Spatial / Geometric,725,4.893688828889639,4.893688828889639,725,19.669017905588714,1.0,1.0,80,27,94,196,328,Included
+A4,lower_region,A4: Lower Region,Spatial / Geometric,2167,14.627067161660479,14.627067161660479,2167,58.79001627780792,1.0,1.0,177,258,524,659,549,Included
+A5,left_region,A5: Left Region,Spatial / Geometric,2587,17.46203172460344,17.46203172460344,2587,70.18448182311448,1.0,1.0,300,1400,416,357,114,Included
+A6,right_region,A6: Right Region,Spatial / Geometric,2341,15.801552480593992,15.801552480593992,2341,63.51058057514921,1.0,1.0,747,168,225,814,387,Included
+A7,high_frequency_texture,A7: High Frequency Texture,Gabor Texture / Frequency,6,0.040499493756328046,0.040499493756328046,6,0.16277807921866522,1.0,1.0,0,0,0,1,5,Excluded
+A8,color_suppressed,A8: Color Suppressed,Color Constancy Normalization,2763,18.650016874789067,18.650016874789067,2763,74.95930548019534,1.0,1.0,465,580,851,418,449,Excluded
+A9,artifact_suppressed,A9: Dark-Structure Mask & Inpainting,Morphological Inpainting,756,5.102936213297333,5.102936213297333,756,20.510037981551818,1.0,1.0,0,13,139,98,506,Excluded

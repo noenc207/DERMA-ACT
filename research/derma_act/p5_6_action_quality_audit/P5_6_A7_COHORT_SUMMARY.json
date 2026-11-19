@@ -1,0 +1,97 @@
+{
+  "cohort_name": "ISIC 2019 Validation Partition",
+  "total_cohort_count": 3542,
+  "processed_count": 3542,
+  "failed_count": 0,
+  "effective_saturation_fraction": {
+    "mean": 0.9362414656141608,
+    "std": 0.1561126374261474,
+    "median": 0.9996611926020408,
+    "iqr": 0.012530891262755084,
+    "p5": 0.5367745535714286,
+    "p25": 0.9874691087372449,
+    "p75": 1.0,
+    "p95": 1.0,
+    "p99": 1.0
+  },
+  "canonical_sat_255_fraction_raw": {
+    "mean": 0.6793244695667299,
+    "median": 0.9857401945153061
+  },
+  "threshold_proportions": {
+    "ge_50pct_sat": 0.9525691699604744,
+    "ge_90pct_sat": 0.847261434217956,
+    "ge_95pct_sat": 0.8150762281197064,
+    "ge_99pct_sat": 0.7360248447204969,
+    "ge_99_9pct_sat": 0.5765104460756635,
+    "all_zero_normalized_collapse_count": 910,
+    "all_zero_normalized_collapse_proportion": 0.25691699604743085,
+    "all_255_pre_norm_count": 910,
+    "all_255_pre_norm_proportion": 0.25691699604743085
+  },
+  "diagnostic_float_response": {
+    "mean_float_max": 3535.8965488220592,
+    "median_float_max": 3017.5389404296875,
+    "mean_exceed_255_fraction": 0.9370835510400641,
+    "median_exceed_255_fraction": 0.9998399475762527,
+    "p95_exceed_255_fraction": 1.0
+  },
+  "class_stratified": {
+    "akiec": {
+      "sample_count": 226,
+      "effective_sat_mean": 0.8964514819340346,
+      "effective_sat_median": 0.9997309470663265,
+      "effective_sat_iqr": 0.126220703125,
+      "ge_95pct_sat_proportion": 0.6991150442477876,
+      "all_zero_collapse_count": 61
+    },
+    "bcc": {
+      "sample_count": 444,
+      "effective_sat_mean": 0.9004942242944475,
+      "effective_sat_median": 0.9940210459183674,
+      "effective_sat_iqr": 0.10061084980867341,
+      "ge_95pct_sat_proportion": 0.6621621621621622,
+      "all_zero_collapse_count": 103
+    },
+    "bkl": {
+      "sample_count": 385,
+      "effective_sat_mean": 0.9433502124469917,
+      "effective_sat_median": 0.9996611926020408,
+      "effective_sat_iqr": 0.012416294642857095,
+      "ge_95pct_sat_proportion": 0.8337662337662337,
+      "all_zero_collapse_count": 98
+    },
+    "df": {
+      "sample_count": 24,
+      "effective_sat_mean": 0.9107807185374149,
+      "effective_sat_median": 0.9999402104591837,
+      "effective_sat_iqr": 0.0005231584821427937,
+      "ge_95pct_sat_proportion": 0.8333333333333334,
+      "all_zero_collapse_count": 10
+    },
+    "mel": {
+      "sample_count": 611,
+      "effective_sat_mean": 0.8839809239724941,
+      "effective_sat_median": 0.9966119260204082,
+      "effective_sat_iqr": 0.11400868941326536,
+      "ge_95pct_sat_proportion": 0.7004909983633388,
+      "all_zero_collapse_count": 60
+    },
+    "nv": {
+      "sample_count": 1819,
+      "effective_sat_mean": 0.965886095238329,
+      "effective_sat_median": 0.9998804209183674,
+      "effective_sat_iqr": 0.002461336096938771,
+      "ge_95pct_sat_proportion": 0.8999450247388675,
+      "all_zero_collapse_count": 570
+    },
+    "vasc": {
+      "sample_count": 33,
+      "effective_sat_mean": 0.9588509054189859,
+      "effective_sat_median": 0.9997409119897959,
+      "effective_sat_iqr": 0.006536989795918324,
+      "ge_95pct_sat_proportion": 0.8787878787878788,
+      "all_zero_collapse_count": 8
+    }
+  }
+}

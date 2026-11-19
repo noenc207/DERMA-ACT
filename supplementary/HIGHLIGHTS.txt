@@ -1,0 +1,5 @@
+- Multi-view fusion lowers A0 Top-1 risk (30.79% to 26.94% V1, 25.96% fixed)
+- Equalizing the 5-action space yields V1 parity with fixed (26.21% vs 25.96%)
+- Policy V1 trades NV (-3.10 pp) and BKL (-5.78 pp) sensitivity for AKIEC gains
+- On-policy instability head ranks Top-1 flips (AUROC 0.9473, AP 0.5172)
+- Pooled LAC hits 90.67% coverage (AKIEC 74.21%); Mondrian does not close AKIEC

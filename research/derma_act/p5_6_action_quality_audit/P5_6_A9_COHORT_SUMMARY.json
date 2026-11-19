@@ -1,0 +1,118 @@
+{
+  "cohort_name": "ISIC 2019 Validation Partition",
+  "total_cohort_count": 3542,
+  "processed_count": 3542,
+  "failed_count": 0,
+  "mask_coverage_fraction": {
+    "mean": 0.11548952319268097,
+    "std": 0.10619771428040738,
+    "median": 0.08133745193481445,
+    "iqr": 0.12325925925925928,
+    "min": 0.00032806396484375,
+    "p5": 0.008856201171875001,
+    "p25": 0.03883981481481481,
+    "p75": 0.1620990740740741,
+    "p90": 0.2636920534261068,
+    "p95": 0.32999369305733206,
+    "p99": 0.4829789136103879,
+    "max": 0.7608251571655273
+  },
+  "connected_components_count": {
+    "mean": 2365.0544889892717,
+    "std": 2556.8738076070563,
+    "median": 1770.5,
+    "p5": 393.0,
+    "p95": 6169.0499999999965,
+    "min": 27,
+    "max": 40859
+  },
+  "component_area_pixels": {
+    "mean_component_area_across_images": 39.61202104978416,
+    "median_component_area_across_images": 2.0,
+    "largest_component_fraction_mean": 0.04288969364722081,
+    "largest_component_fraction_median": 0.01085731539858906
+  },
+  "spatial_distribution": {
+    "mean_center_mask_fraction": 0.49984699436926633,
+    "mean_peripheral_mask_fraction": 0.5001530056307336
+  },
+  "inpainting_pixel_modification": {
+    "mean_pixel_changed_fraction": 0.11547929900238325,
+    "mean_absolute_difference": 1.74987764248699,
+    "r_mad_mean": 1.5490625479665097,
+    "g_mad_mean": 1.808801860501753,
+    "b_mad_mean": 1.8917685211533581
+  },
+  "class_stratified": {
+    "akiec": {
+      "sample_count": 226,
+      "mask_coverage_mean": 0.10164230398267499,
+      "mask_coverage_median": 0.07265518075448496,
+      "mask_coverage_iqr": 0.10987043380737305,
+      "p5": 0.008696556091308594,
+      "p95": 0.3071351851851852,
+      "num_components_mean": 2155.902654867257,
+      "mean_abs_diff": 1.4132575843137054
+    },
+    "bcc": {
+      "sample_count": 444,
+      "mask_coverage_mean": 0.07489415213782508,
+      "mask_coverage_median": 0.04350153743602611,
+      "mask_coverage_iqr": 0.09084624235365125,
+      "p5": 0.003955698013305664,
+      "p95": 0.2248064814814814,
+      "num_components_mean": 1689.0923423423424,
+      "mean_abs_diff": 1.228205821706561
+    },
+    "bkl": {
+      "sample_count": 385,
+      "mask_coverage_mean": 0.13475823801504536,
+      "mask_coverage_median": 0.09497642517089844,
+      "mask_coverage_iqr": 0.13107777777777777,
+      "p5": 0.013958168029785157,
+      "p95": 0.396535036423627,
+      "num_components_mean": 2253.3818181818183,
+      "mean_abs_diff": 2.1497840463123343
+    },
+    "df": {
+      "sample_count": 24,
+      "mask_coverage_mean": 0.146419516937821,
+      "mask_coverage_median": 0.12448888888888889,
+      "mask_coverage_iqr": 0.12127314814814814,
+      "p5": 0.018725204467773437,
+      "p95": 0.36350833333333327,
+      "num_components_mean": 2178.75,
+      "mean_abs_diff": 1.7666084362814825
+    },
+    "mel": {
+      "sample_count": 611,
+      "mask_coverage_mean": 0.14230333628893416,
+      "mask_coverage_median": 0.11220846737132353,
+      "mask_coverage_iqr": 0.13664722442626953,
+      "p5": 0.023374529445872587,
+      "p95": 0.36559247970581055,
+      "num_components_mean": 3271.693944353519,
+      "mean_abs_diff": 2.269307786636146
+    },
+    "nv": {
+      "sample_count": 1819,
+      "mask_coverage_mean": 0.11411002236398782,
+      "mask_coverage_median": 0.07991695404052734,
+      "mask_coverage_iqr": 0.12113148148148148,
+      "p5": 0.009809494018554688,
+      "p95": 0.3273611111111111,
+      "num_components_mean": 2292.627267729522,
+      "mean_abs_diff": 1.6665510458204462
+    },
+    "vasc": {
+      "sample_count": 33,
+      "mask_coverage_mean": 0.08879599103831282,
+      "mask_coverage_median": 0.050777777777777776,
+      "mask_coverage_iqr": 0.0894017328898112,
+      "p5": 0.0038850784301757814,
+      "p95": 0.28779333333333323,
+      "num_components_mean": 1536.2424242424242,
+      "mean_abs_diff": 1.3720648640371633
+    }
+  }
+}

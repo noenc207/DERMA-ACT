@@ -1,0 +1,23 @@
+# Python & test caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache*/
+.ruff_cache/
+.coverage*
+
+# Environments & secrets
+.venv*/
+venv/
+env/
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Generated local verification outputs
+outputs/
+*.log
+*.tmp

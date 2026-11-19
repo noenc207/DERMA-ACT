@@ -1,0 +1,26 @@
+\begin{table}[!htbp]
+\centering
+\caption{Evidence-classified training and temperature-scaling protocol for the frozen EfficientNet-B4 backbone. Where static YAML configuration defaults differ from executed Python training code and retained checkpoint metadata, only verified executed values are reported as active.}
+\label{tab:supp_classifier_protocol}
+\scriptsize
+\setlength{\tabcolsep}{3.0pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}p{2.7cm}p{6.6cm}p{4.8cm}@{}}
+\toprule
+Component & Verified Executed Specification & Evidence Tag \\
+\midrule
+Backbone \& Head & \texttt{timm} \texttt{efficientnet\_b4} ($17.9$M params); head: \texttt{Flatten} $\to$ \texttt{BatchNorm1d(1792)} $\to$ \texttt{Dropout(0.3)} $\to$ \texttt{Linear(1792, 7)}. & \texttt{VERIFIED\_FROM\_CODE}, \texttt{VERIFIED\_FROM\_CHECKPOINT\_METADATA} \\
+Pretrained Provenance & ImageNet-1k weights (\texttt{pretrained=True}, HuggingFace/\texttt{timm} \texttt{efficientnet\_b4.ra2\_in1k}). & \texttt{VERIFIED\_FROM\_CODE}, \texttt{VERIFIED\_FROM\_CONFIG}, \texttt{VERIFIED\_FROM\_LOG} \\
+Training Split \& Sampling & ISIC~2019 lesion-group disjoint Train ($N=16{,}702$, $9{,}198$ groups); \texttt{WeightedClassSampler}; batch size $32$, $8$ workers, \texttt{pin\_memory=True}. & \texttt{VERIFIED\_FROM\_CODE}, \texttt{VERIFIED\_FROM\_CHECKPOINT\_METADATA} \\
+Train Preprocessing & \texttt{RandomResizedCrop(224, scale=(0.5,0.85), ratio=(0.9,1.1))}, H/V flips ($0.5$), ShiftScaleRotate ($0.1,0.15,90^\circ,0.5$), Rotate90 ($0.3$), CoarseDropout, ColorJitter, CLAHE, Brightness/Contrast, HSV, GaussNoise, Blur, Compression, ImageNet norm. & \texttt{VERIFIED\_FROM\_CODE}, \texttt{VERIFIED\_FROM\_CHECKPOINT\_METADATA} \\
+Eval $A_0$ / $A_1$--$A_9$ Input & $A_0$: \texttt{Resize(291)} $\to$ \texttt{CenterCrop(224)} $\to$ ImageNet norm. $A_1$--$A_9$: deterministic operator $\to$ \texttt{Resize(224)} $\to$ ImageNet norm (no second center crop). & \texttt{VERIFIED\_FROM\_CODE} \\
+Loss Function & \texttt{CrossEntropyLoss(label\_smoothing=0.1)} (YAML \texttt{focal} loss option unimplemented in training loop). & \texttt{VERIFIED\_FROM\_CODE}, \texttt{VERIFIED\_FROM\_CHECKPOINT\_METADATA} \\
+Optimizer \& LR & \texttt{AdamW(lr=1e-4, betas=(0.9,0.999), eps=1e-8, weight\_decay=1e-4)}; YAML \texttt{1e-3} unused. & \texttt{VERIFIED\_FROM\_CODE}, \texttt{VERIFIED\_FROM\_CHECKPOINT\_METADATA} \\
+LR Scheduler \& EMA & \texttt{CosineAnnealingLR(T\_max=50, eta\_min=0.0)}, step epoch-wise ($\mathrm{lr}_{10}=9.045\times 10^{-5}$); warmup ($5$ epochs) and EMA unimplemented/absent. & \texttt{VERIFIED\_FROM\_CODE}, \texttt{VERIFIED\_FROM\_CHECKPOINT\_METADATA} \\
+Precision \& Determinism & AMP \texttt{16-mixed}, gradient clip $1.0$, accumulate $1$, \texttt{seed=42}, \texttt{deterministic=True}. & \texttt{VERIFIED\_FROM\_CODE}, \texttt{VERIFIED\_FROM\_CHECKPOINT\_METADATA} \\
+Selection \& Stopping & \texttt{ModelCheckpoint} monitoring \texttt{val/auroc} max (epoch $9$, $10$ epochs, $5{,}220$ steps; val AUROC $0.9331$, val Acc $71.34\%$); \texttt{EarlyStopping(patience=10)} had \texttt{wait\_count=0}; cloud halt trigger absent locally (limits reporting detail only; weights and eval splits preserved). & \texttt{VERIFIED\_FROM\_CHECKPOINT\_METADATA}, \texttt{NOT\_RECOVERABLE} (halt trigger) \\
+Temperature Scaling & Post-hoc BFGS NLL minimization on frozen $A_0$ logits: $T_{\mathrm{full}}=0.851796$ ($\mathcal{D}_{\mathrm{cal}}$) and $T_{\mathrm{fit}}=0.855690$ ($\mathcal{D}_{\mathrm{fit}}$). & \texttt{VERIFIED\_FROM\_CODE} \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

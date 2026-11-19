@@ -1,0 +1,20 @@
+\begin{table}[!htbp]
+\centering
+\caption{Canonical probability-source provenance and metric reconciliation across all manuscript tables and figures. Notice both $A_0$ Test arrays apply identical \texttt{Resize(291)}$\to$\texttt{CenterCrop(224)} transforms and match across all $3{,}686/3{,}686$ discrete Top-1 predictions ($69.21\%$ accuracy, $30.79\%$ risk, $68.83\%$ balanced accuracy); tiny continuous offsets ($\max |\Delta \mathrm{logit}| = 0.006299$, $\max |\Delta p| = 0.001353$) reflect GPU cuDNN batch-size reduction order ($64$ vs.\ $32$).}
+\label{tab:supp_prob_sources}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}p{3.6cm}p{4.3cm}p{5.5cm}@{}}
+\toprule
+Analysis / Deliverable & Declared Canonical Source & Verified Key Metrics \& Consistency Check \\
+\midrule
+Global Baseline $A_0$ (Main Table~2, Raw \& TS) & Single-view Test logits/probs ($\mathrm{BS}=64$) + Calibration logits ($T_{\mathrm{full}}=0.851796$) & Raw: Top-1 $69.21\%$ ($2{,}551/3{,}686$), BAcc $68.83\%$, AUROC $0.927355$, ECE $2.5203\%$, NLL $0.8273$, Brier $0.4207$. Scaled ($T_{\mathrm{full}}$): ECE $2.7088\%$, NLL $0.8174$, Brier $0.4210$. \\
+Split \& Mondrian Conformal (Main Fig.~7, Tables~7--8) & Calibration logits split into $\mathcal{D}_{\mathrm{fit}}$ ($T_{\mathrm{fit}}=0.855690$) \& $\mathcal{D}_{\mathrm{conf}}$ ($N=703$); Test logits ($\mathrm{BS}=64$) & Pooled $k^*=634, q^*=0.904267$, cov $90.67\%$ ($3{,}342/3{,}686$), size $1.9249$; Mondrian cov $90.64\%$, size $2.3896$ (unsplit interpolated quantiles excluded). \\
+Sequential Multi-View \& Spatial Ablation (Figs.~3--5, Tables~3--5) & Per-action Test tensor ($A_0$--$A_9$, $\mathrm{BS}=32$) & Step $t=0$ matches single-view $A_0$ on $3{,}686/3{,}686$ Top-1 labels ($30.79\%$ risk); continuous $A_0$ raw ECE $2.5383\%$, AUROC $0.927356$ ($\mathrm{mean}|\Delta p|=5.78\times 10^{-5}$). \\
+Decision-Flip Instability (Fig.~6, Table~6) & Per-action Test rollouts ($M=14{,}815$ transitions, $B=5$) & AUROC $0.947302$, AP $0.517218$, Brier $0.041595$; $988$ consecutive Top-1 flips ($6.6689\%$). \\
+Perturbation Sensitivity (Fig.~8, Table~9) & Isolated Validation subset ($N=50$, $16$ transforms, frozen $A_0$) & Disjoint from Test ($0$ shared lesions/images); pairs unperturbed vs.\ transformed $A_0$ predictions. \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

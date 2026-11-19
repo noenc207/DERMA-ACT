@@ -1,0 +1,24 @@
+{
+  "experiment": "Phase F Controlled Action-Restricted Learned Policy ({A1, A3, A4, A5, A6})",
+  "protocol_status": "EXECUTED_POST_HOC_CANDIDATE_RESTRICTION",
+  "allowed_actions": [
+    "A1",
+    "A3",
+    "A4",
+    "A5",
+    "A6"
+  ],
+  "frozen_weights_sha256": "32a098c8e2aa958959122cb0292eff0cc8932ea4dac4c2599f3dd37ed2587c95",
+  "frozen_test_npz_sha256": "9940b9a4f2ec6301a051e7c782ddbaa84cd23f325b862c92d87cd3e9bfd2e04f",
+  "frozen_lambda": {
+    "lambda_Q": 5,
+    "lambda_C": 1,
+    "lambda_I": 0.5,
+    "lambda_K": 0.25
+  },
+  "frozen_tau": -0.4285714285714286,
+  "boot_seed": 20261112,
+  "n_boot": 2000,
+  "n_test": 3686,
+  "n_clusters": 1972
+}

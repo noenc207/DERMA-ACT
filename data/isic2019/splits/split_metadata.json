@@ -1,0 +1,23 @@
+{
+  "split_hash": "df52266ea5c2a4b1",
+  "group_column_used": "lesion_id",
+  "num_unique_groups": 13931,
+  "config": {
+    "train_ratio": 0.6603773584905661,
+    "val_ratio": 0.14150943396226418,
+    "calibration_ratio": 0.05660377358490567,
+    "test_ratio": 0.14150943396226418,
+    "seed": 42,
+    "group_column": "lesion_id",
+    "stratify_column": "class_id"
+  },
+  "total_samples": 25331,
+  "train_samples": 16702,
+  "val_samples": 3542,
+  "cal_samples": 1401,
+  "test_samples": 3686,
+  "train_groups": 9198,
+  "val_groups": 1972,
+  "cal_groups": 789,
+  "test_groups": 1972
+}

@@ -1,0 +1,9 @@
+# Model Provenance (`DERMA-ACT V2`)
+
+1. **Backbone Classifier:** `EfficientNet-B4` (`7`-class head, `224x224` ImageNet normalization `[0.485, 0.456, 0.406] / [0.229, 0.224, 0.225]`), frozen checkpoint `epoch=09-val_auroc=0.0000.ckpt` (filename preserves historical Lightning monitor key; actual `A0` test `Macro AUROC = 0.9274`). SHA-256: `0d14579d668d02781874cf91ad493fac4bf33ed53e3be928e3a7f9bb856ebbbb`. Weight binary excluded (derived from `CC-BY-NC` ISIC 2019).
+2. **Historical Backbone Training Caveat:** Early backbone training logs (`mlflow.db`) captured only `1`-epoch test runs (`0` metrics); exact pre-freeze PyTorch/cuDNN nondeterministic optimization seeds cannot be reconstructed from scratch without retraining. All downstream evaluations freeze the trained `.ckpt` logits deterministically.
+3. **Temperature Calibration (`T = 0.8518`):** Fitted on calibration logits (`ECE = 0.0271` on test vs uncalibrated baseline).
+4. **Sequential Policy (`MultiHeadActionPolicy`):** 2-layer MLP (`28 + 9 -> 64 -> 64` + 3 heads: `dq`, `dc`, `instability_logit`), **`6,787` trainable parameters**, trained as a finite-horizon supervised surrogate estimator (NOT Bellman-optimized POMDP). Frozen weights `policy.pt` SHA-256: `32a098c8e2aa958959122cb0292eff0cc8932ea4dac4c2599f3dd37ed2587c95` (excluded binary). Frozen hyperparameters: `lambda = (5.0, 1.0, 0.5, 0.25)`, `tau = -3/7` (`-0.4285714...`, `TAU = -0.4286`), `EPS = 1e-12`.
+5. **Split-Conformal & Mondrian Calibration:**
+   - Global LAC (`alpha = 0.10`): fit partition `D_fit` (`N = 698`), calibration partition `D_conf` (`N = 703`), order statistic `k* = 634`, threshold `q* = 0.904267`, yielding `90.67%` marginal test coverage (`mean set size = 1.92`), `AKIEC` test coverage `74.21%`.
+   - Class-conditional Mondrian LAC (`alpha = 0.10`): small calibration support (`AKIEC` `N_conf = 17`) fails to close the `AKIEC` gap (`70.59%` coverage, `2.39` overall mean set size).

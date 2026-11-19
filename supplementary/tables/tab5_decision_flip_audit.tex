@@ -1,0 +1,39 @@
+\begin{table}[!htbp]
+\centering
+\caption{Pre-acquisition decision-flip instability head audit across $M=14{,}815$ realized on-policy test transitions ($988$ Top-1 flips; $6.67\%$ transition prevalence; $634/3{,}371 = 18.81\%$ of multi-view episodes) clustered across $K=1{,}887$ multi-view grouping units ($1{,}627$ observed lesion IDs and $260$ singletons). Cluster 95\% CIs use $B=2{,}000$ (\texttt{seed=20261112}).}
+\label{tab:decision_flip_audit}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\multicolumn{5}{@{}l}{\textbf{Panel A: Global Discrimination and Outcome Stratification ($M=14{,}815$)}} \\
+\midrule
+Evaluation Metric / Stratum & Estimate & 95\% Cluster CI / IQR & Reference / Count & Scope Qualification \\
+\midrule
+ROC AUROC & 0.9473 & [0.9417, 0.9525] & 0.5000 (chance) & Threshold-free ranking discrimination \\
+Average Precision (AP) & 0.5172 & [0.4819, 0.5509] & 0.0667 ($7.76\times$ prevalence) & Step-function AP (not trapezoidal) \\
+Brier Score & 0.0416 & [0.0381, 0.0453] & 0.0622 (marginal prev.) & Combined calibration + refinement \\
+Transition Flip Prevalence & 0.0667 & [0.0606, 0.0734] & 988 / 14,815 transitions & Pre-acquisition on-policy subset \\
+Score Distribution: No Flip (y=0) & Median 0.0000 & IQR 0.0161 ([0.0000, 0.0161]) & $n=13,827$ & Predicted $\sigma(\mathrm{logit}_i)$ before step \\
+Score Distribution: Decision Flip (y=1) & Median 0.3624 & IQR 0.2803 ([0.2159, 0.4962]) & $n=988$ & Predicted $\sigma(\mathrm{logit}_i)$ before step \\
+\midrule
+\multicolumn{5}{@{}l}{\textbf{Panel B: Equal-Width Predicted Instability Bin Breakdown}} \\
+\midrule
+Predicted Probability Bin & Transitions ($n$) & Realized Flips & Clusters Present & Mean Score $\to$ Observed Flip Rate [95\% CI] \\
+\midrule
+{[}0.0, 0.1) & 12,206 & 101 & 1,867 & 0.0082 $\to$ 0.0083 [0.0067, 0.0101] \\
+{[}0.1, 0.2) & 788 & 134 & 442 & 0.1460 $\to$ 0.1701 [0.1429, 0.1984] \\
+{[}0.2, 0.3) & 556 & 150 & 340 & 0.2479 $\to$ 0.2698 [0.2312, 0.3093] \\
+{[}0.3, 0.4) & 466 & 174 & 288 & 0.3462 $\to$ 0.3734 [0.3296, 0.4182] \\
+{[}0.4, 0.5) & 401 & 192 & 276 & 0.4445 $\to$ 0.4788 [0.4328, 0.5243] \\
+{[}0.5, 0.6) & 255 & 135 & 192 & 0.5450 $\to$ 0.5294 [0.4737, 0.5870] \\
+{[}0.6, 0.7) & 107 & 73 & 90 & 0.6395 $\to$ 0.6822 [0.5865, 0.7692] \\
+{[}0.7, 0.8) $^\dagger$ & 30 & 23 & 24 & 0.7392 $\to$ 0.7667 [0.6000, 0.9048] \\
+{[}0.8, 0.9) $^\dagger$ & 6 & 6 & 5 & 0.8190 $\to$ 1.0000 [1.0000, 1.0000] \\
+{[}0.9, 1.0] & 0 & 0 & 0 & Empty bin \\
+\bottomrule
+\multicolumn{5}{@{}l}{\footnotesize $^\dagger$Sparse high-score bin ($n \le 30$). No operational alert threshold was prespecified or evaluated cleanly for error prevention.}
+\end{tabular}%
+}
+\end{table}

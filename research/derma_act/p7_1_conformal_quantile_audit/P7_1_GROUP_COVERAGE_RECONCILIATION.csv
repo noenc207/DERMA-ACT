@@ -1,0 +1,12 @@
+estimand_id,estimand_type,label,unit,denominator,numerator,empirical_coverage,cluster_ci95_low,cluster_ci95_high,bootstrap_mean,bootstrap_sd,interpretation_note
+img_weighted_all,Image-Weighted,All Held-Out Images,"Image (N=3,686)",3686,3342,0.906674,0.891431,0.921245,0.906742,0.00745,Each image weighted equally (cluster size weights cluster contribution)
+img_weighted_singleton,Image-Weighted,Singleton-Group Images (k=1),"Image (N=1,226)",1226,1164,0.949429,0.936666,0.961072,0.949149,0.006245,949 known singleton lesions + 277 missing-ID singletons
+img_weighted_multi,Image-Weighted,Multi-Image-Group Photos (k>=2),"Image (N=2,460)",2460,2178,0.885366,0.863892,0.906237,0.885597,0.010609,Correlated acquisitions within 746 multi-photo lesion groups
+img_weighted_known,Image-Weighted,Observed Lesion-ID Images,"Image (N=3,409)",3409,3084,0.904664,0.888197,0.920175,0.904747,0.007965,"Images belonging to 1,695 observed lesion_id clusters"
+img_weighted_missing,Image-Weighted,Missing Lesion-ID Singletons,Image (N=277),277,258,0.931408,0.898987,0.959325,0.931267,0.01536,Treated as singleton tokens; patient/lesion linkage unknown
+grp_weighted_all_cov,Group-Weighted (Conjunction),Cluster All-Images-Covered (All Units),"Cluster (K=1,972)",1972,1770,0.897566,0.884381,0.910751,0.897523,0.00674,"Strict conjunction: every photo of group must cover true class (1,770/1,972 = 89.76%)"
+grp_weighted_all_sing,Group-Weighted (Conjunction),Cluster All-Covered: Singleton (k=1),"Cluster (K=1,226)",1226,1164,0.949429,0.936666,0.961072,0.949149,0.006245,Coincides with image coverage on k=1 singleton groups
+grp_weighted_all_multi,Group-Weighted (Conjunction),Cluster All-Covered: Multi-Image (k>=2),Cluster (K=746),746,606,0.812332,0.785252,0.839523,0.81278,0.014103,Multi-photo lesions with 100% of photos covered (606/746 = 81.23%)
+grp_weighted_any_cov,Group-Weighted (Disjunction),Cluster Any-Image-Covered (All Units),"Cluster (K=1,972)",1972,1870,0.948276,0.937627,0.957404,0.948107,0.005006,"At least one image of group covers true class (1,870/1,972 = 94.83%)"
+grp_weighted_any_multi,Group-Weighted (Disjunction),Cluster Any-Covered: Multi-Image (k>=2),Cluster (K=746),746,706,0.946381,0.929654,0.961542,0.946392,0.008229,Multi-photo lesions with >=1 covering image (706/746 = 94.64%)
+grp_weighted_equal_mean,Group-Weighted (Equal Cluster Weight),Equal-Cluster-Weighted Mean Coverage,"Cluster (K=1,972)",1972,1830,0.927995,0.917128,0.937983,0.927848,0.005354,"Unweighted mean of within-cluster coverage proportions across K=1,972 clusters"

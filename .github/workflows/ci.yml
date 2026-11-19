@@ -1,0 +1,28 @@
+name: DERMA-ACT V2 Clean Verification
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install verification dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install torch numpy pandas scikit-learn scipy Pillow pytest matplotlib
+      - name: Compile source and scripts
+        run: python -m compileall -q src research/derma_act/core scripts tests
+      - name: Run standalone canonical math and hygiene tests
+        run: python -m pytest -p no:cacheprovider tests/test_canonical_math.py tests/test_release_smoke.py -v
+      - name: Verify clean-room aggregate table and figure builders
+        run: |
+          python scripts/generate_tables.py --out-dir ./outputs/tables
+          python scripts/build_figures.py --tier aggregate --out-dir ./outputs/figures

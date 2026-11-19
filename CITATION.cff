@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+title: "Sequential Virtual-View Strategies, Decision-Flip Prediction, and Conformal Uncertainty Quantification for Dermoscopic Image Classification: A Comparative Computational Study"
+message: "Pre-submission research software metadata (DERMA-ACT V2 / Manuscript V3.2.1). Do not cite as peer-reviewed or published until journal acceptance."
+type: software
+version: "0.2.0"
+license: "UNSPECIFIED"
+authors:
+  - family-names: "Le"
+    given-names: "Duc-Son"
+    email: "SonldQE220036@fpt.edu.vn"
+    affiliation: "FPT University, Quy Nhon Campus, An Phu Thinh New Urban Area, Quy Nhon Dong Ward, Gia Lai Province, Vietnam"
+    orcid: "https://orcid.org/0009-0000-5804-7811"
+keywords:
+  - dermoscopy
+  - conformal prediction
+  - active perception
+  - uncertainty quantification
+  - decision stability
+  - ISIC 2019
+notes: >-
+  Manuscript revision V3.2.1 is under pre-submission preparation for Biomedical Signal Processing and Control (no acceptance, volume, issue, or DOI established). No repository-wide open-source license has been established; upstream ISIC 2019 imagery and metadata remain governed by CC-BY-NC 4.0.

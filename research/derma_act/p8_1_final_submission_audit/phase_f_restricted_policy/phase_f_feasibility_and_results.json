@@ -1,0 +1,373 @@
+{
+  "feasibility_audit": {
+    "verdict": "VALID_AS_POST_HOC_INFERENCE_RESTRICTION_WITH_CANDIDATE_MASKING",
+    "why_ood_state_mask_rejected": "Zeroing forbidden action bits (A2,A7,A8,A9) directly in the 28-dim MLP state vector violates the training invariant history[k]+mask[k]==1 (build_v1_states.py), feeding off-manifold orthants to non-trivial input weights. On CAL Step 1, OOD mask zeroing shifted mean predicted utility from -0.1950 to 0.0979 and collapsed Step-1 stopping from 12.56% to 0.29%.",
+    "mask_input_col_l2_norms_A1_to_A9": [
+      0.7736064791679382,
+      0.7078226208686829,
+      0.81142258644104,
+      0.9016714096069336,
+      0.6491004228591919,
+      0.768979549407959,
+      1.3122986555099487,
+      0.8154482245445251,
+      0.7262296676635742
+    ],
+    "what_is_controlled": "Both Learned_V1_Spatial and Val_Ranked_ConfStop/Unstopped draw exclusively from {A1,A3,A4,A5,A6} (same frozen classifier predictions).",
+    "what_remains_uncontrolled": "policy.pt, lambda, and tau were trained/tuned under the 9-action regime, not retrained from scratch on 5 spatial actions."
+  },
+  "budget_trajectory": [
+    {
+      "budget": 1,
+      "accuracy": 0.7197504069451981,
+      "risk": 0.28024959305480196,
+      "risk_ci95_low": 0.25816752058445125,
+      "risk_ci95_high": 0.3037561955841069,
+      "balanced_accuracy": 0.6820390138726717,
+      "mean_cost": 0.8697775366250678,
+      "early_stop_freq": 0.13022246337493218,
+      "cal_stop_risk": 0.28024959305480196,
+      "cal_stop_cost": 0.9153553988062941,
+      "learned_v1_9act_risk": 0.28594682582745523,
+      "learned_v1_9act_cost": 0.9145415084102008
+    },
+    {
+      "budget": 2,
+      "accuracy": 0.7335865436787846,
+      "risk": 0.26641345632121544,
+      "risk_ci95_low": 0.24417493328536474,
+      "risk_ci95_high": 0.28897169149482405,
+      "balanced_accuracy": 0.7009963548445057,
+      "mean_cost": 1.596581660336408,
+      "early_stop_freq": 0.27319587628865977,
+      "cal_stop_risk": 0.27075420510037984,
+      "cal_stop_cost": 1.8147042864894194,
+      "learned_v1_9act_risk": 0.272924579489962,
+      "learned_v1_9act_cost": 1.8122626153011394
+    },
+    {
+      "budget": 3,
+      "accuracy": 0.7387411828540423,
+      "risk": 0.26125881714595767,
+      "risk_ci95_low": 0.2389615208295407,
+      "risk_ci95_high": 0.28408798427683213,
+      "balanced_accuracy": 0.696950009513859,
+      "mean_cost": 2.2908301682040153,
+      "early_stop_freq": 0.30575149213239283,
+      "cal_stop_risk": 0.2650569723277265,
+      "cal_stop_cost": 2.58166033640803,
+      "learned_v1_9act_risk": 0.2699403147042865,
+      "learned_v1_9act_cost": 2.60119370591427
+    },
+    {
+      "budget": 4,
+      "accuracy": 0.7400976668475312,
+      "risk": 0.2599023331524688,
+      "risk_ci95_low": 0.23780366854626137,
+      "risk_ci95_high": 0.28260116468751645,
+      "balanced_accuracy": 0.6920041328150263,
+      "mean_cost": 2.8969072164948453,
+      "early_stop_freq": 0.39392295170916986,
+      "cal_stop_risk": 0.2642430819316332,
+      "cal_stop_cost": 3.306565382528486,
+      "learned_v1_9act_risk": 0.2666847531199132,
+      "learned_v1_9act_cost": 3.355398806294086
+    },
+    {
+      "budget": 5,
+      "accuracy": 0.737927292457949,
+      "risk": 0.26207270754205103,
+      "risk_ci95_low": 0.2399439888523445,
+      "risk_ci95_high": 0.285214991228599,
+      "balanced_accuracy": 0.690497192399765,
+      "mean_cost": 3.438415626695605,
+      "early_stop_freq": 0.4584915897992404,
+      "cal_stop_risk": 0.25963103635377105,
+      "cal_stop_cost": 3.8977211068909385,
+      "learned_v1_9act_risk": 0.2693977211068909,
+      "learned_v1_9act_cost": 4.019262072707542
+    }
+  ],
+  "paired_comparisons_holm_m20": [
+    {
+      "comparison": "Learned_V1_Spatial_vs_CAL_Stop",
+      "budget": 1,
+      "risk_diff": 0.0,
+      "ci95_low": -0.008773219814241486,
+      "ci95_high": 0.0088184116299208,
+      "a_correct_b_wrong": 117,
+      "a_wrong_b_correct": 117,
+      "mcnemar_p": 1.0,
+      "holm_p_adj_m20": 1.0
+    },
+    {
+      "comparison": "Learned_V1_Spatial_vs_Unstopped_Spatial",
+      "budget": 1,
+      "risk_diff": 0.0,
+      "ci95_low": -0.008773219814241486,
+      "ci95_high": 0.0088184116299208,
+      "a_correct_b_wrong": 117,
+      "a_wrong_b_correct": 117,
+      "mcnemar_p": 1.0,
+      "holm_p_adj_m20": 1.0
+    },
+    {
+      "comparison": "Learned_V1_Spatial_vs_Learned_V1_9Action",
+      "budget": 1,
+      "risk_diff": -0.0056972327726532825,
+      "ci95_low": -0.009881640837292106,
+      "ci95_high": -0.0018281533665619127,
+      "a_correct_b_wrong": 37,
+      "a_wrong_b_correct": 16,
+      "mcnemar_p": 0.005486344876760141,
+      "holm_p_adj_m20": 0.07680882827464197
+    },
+    {
+      "comparison": "Learned_V1_Spatial_vs_Global_A0",
+      "budget": 1,
+      "risk_diff": -0.027672273467173086,
+      "ci95_low": -0.03802364583333333,
+      "ci95_high": -0.016546312038036075,
+      "a_correct_b_wrong": 219,
+      "a_wrong_b_correct": 117,
+      "mcnemar_p": 2.8323311299158135e-08,
+      "holm_p_adj_m20": 4.5317298078653016e-07
+    },
+    {
+      "comparison": "Learned_V1_Spatial_vs_CAL_Stop",
+      "budget": 2,
+      "risk_diff": -0.004340748779164406,
+      "ci95_low": -0.015197881851013362,
+      "ci95_high": 0.006375653992404442,
+      "a_correct_b_wrong": 126,
+      "a_wrong_b_correct": 110,
+      "mcnemar_p": 0.32886686293311573,
+      "holm_p_adj_m20": 1.0
+    },
+    {
+      "comparison": "Learned_V1_Spatial_vs_Unstopped_Spatial",
+      "budget": 2,
+      "risk_diff": -0.004340748779164406,
+      "ci95_low": -0.015197881851013362,
+      "ci95_high": 0.006375653992404442,
+      "a_correct_b_wrong": 126,
+      "a_wrong_b_correct": 110,
+      "mcnemar_p": 0.32886686293311573,
+      "holm_p_adj_m20": 1.0
+    },
+    {
+      "comparison": "Learned_V1_Spatial_vs_Learned_V1_9Action",
+      "budget": 2,
+      "risk_diff": -0.0065111231687466084,
+      "ci95_low": -0.012182327602854084,
+      "ci95_high": -0.001611714304045904,
+      "a_correct_b_wrong": 50,
+      "a_wrong_b_correct": 26,
+      "mcnemar_p": 0.007905180027859783,
+      "holm_p_adj_m20": 0.10276734036217719
+    },
+    {
+      "comparison": "Learned_V1_Spatial_vs_Global_A0",
+      "budget": 2,
+      "risk_diff": -0.041508410200759634,
+      "ci95_low": -0.05317791015549367,
+      "ci95_high": -0.030213743961658022,
+      "a_correct_b_wrong": 252,
+      "a_wrong_b_correct": 99,
+      "mcnemar_p": 1.619176458439627e-16,
+      "holm_p_adj_m20": 2.7525999793473657e-15
+    },
+    {
+      "comparison": "Learned_V1_Spatial_vs_CAL_Stop",
+      "budget": 3,
+      "risk_diff": -0.0037981551817688553,
+      "ci95_low": -0.015985585185669567,
+      "ci95_high": 0.007916700500439076,
+      "a_correct_b_wrong": 155,
+      "a_wrong_b_correct": 141,
+      "mcnemar_p": 0.44993862993776257,
+      "holm_p_adj_m20": 1.0
+    },
+    {
+      "comparison": "Learned_V1_Spatial_vs_Unstopped_Spatial",
+      "budget": 3,
+      "risk_diff": -0.0037981551817688553,
+      "ci95_low": -0.015985585185669567,
+      "ci95_high": 0.007916700500439076,
+      "a_correct_b_wrong": 155,
+      "a_wrong_b_correct": 141,
+      "mcnemar_p": 0.44993862993776257,
+      "holm_p_adj_m20": 1.0
+    },
+    {
+      "comparison": "Learned_V1_Spatial_vs_Learned_V1_9Action",
+      "budget": 3,
+      "risk_diff": -0.008681497558328812,
+      "ci95_low": -0.014257985020250838,
+      "ci95_high": -0.003247647226717337,
+      "a_correct_b_wrong": 57,
+      "a_wrong_b_correct": 25,
+      "mcnemar_p": 0.0005347214913281793,
+      "holm_p_adj_m20": 0.008020822369922688
+    },
+    {
+      "comparison": "Learned_V1_Spatial_vs_Global_A0",
+      "budget": 3,
+      "risk_diff": -0.04666304937601736,
+      "ci95_low": -0.05888678819346464,
+      "ci95_high": -0.03520742114969751,
+      "a_correct_b_wrong": 260,
+      "a_wrong_b_correct": 88,
+      "mcnemar_p": 7.466006443046345e-21,
+      "holm_p_adj_m20": 1.4185412241788057e-19
+    },
+    {
+      "comparison": "Learned_V1_Spatial_vs_CAL_Stop",
+      "budget": 4,
+      "risk_diff": -0.004340748779164406,
+      "ci95_low": -0.014208368818535535,
+      "ci95_high": 0.004847095298951292,
+      "a_correct_b_wrong": 112,
+      "a_wrong_b_correct": 96,
+      "mcnemar_p": 0.29829604748976646,
+      "holm_p_adj_m20": 1.0
+    },
+    {
+      "comparison": "Learned_V1_Spatial_vs_Unstopped_Spatial",
+      "budget": 4,
+      "risk_diff": -0.004340748779164406,
+      "ci95_low": -0.014208368818535535,
+      "ci95_high": 0.004847095298951292,
+      "a_correct_b_wrong": 112,
+      "a_wrong_b_correct": 96,
+      "mcnemar_p": 0.29829604748976646,
+      "holm_p_adj_m20": 1.0
+    },
+    {
+      "comparison": "Learned_V1_Spatial_vs_Learned_V1_9Action",
+      "budget": 4,
+      "risk_diff": -0.006782419967444384,
+      "ci95_low": -0.012251943007532445,
+      "ci95_high": -0.0010924640089082797,
+      "a_correct_b_wrong": 62,
+      "a_wrong_b_correct": 37,
+      "mcnemar_p": 0.015432364507309008,
+      "holm_p_adj_m20": 0.1851883740877081
+    },
+    {
+      "comparison": "Learned_V1_Spatial_vs_Global_A0",
+      "budget": 4,
+      "risk_diff": -0.04801953336950624,
+      "ci95_low": -0.060196300341842736,
+      "ci95_high": -0.036789601893311465,
+      "a_correct_b_wrong": 267,
+      "a_wrong_b_correct": 90,
+      "mcnemar_p": 1.7301749328407714e-21,
+      "holm_p_adj_m20": 3.460349865681543e-20
+    },
+    {
+      "comparison": "Learned_V1_Spatial_vs_CAL_Stop",
+      "budget": 5,
+      "risk_diff": 0.0024416711882799783,
+      "ci95_low": -0.006375547028857599,
+      "ci95_high": 0.011373087983403852,
+      "a_correct_b_wrong": 92,
+      "a_wrong_b_correct": 101,
+      "mcnemar_p": 0.5648284358631901,
+      "holm_p_adj_m20": 1.0
+    },
+    {
+      "comparison": "Learned_V1_Spatial_vs_Unstopped_Spatial",
+      "budget": 5,
+      "risk_diff": 0.0032555615843733042,
+      "ci95_low": -0.005504941571986958,
+      "ci95_high": 0.012186273353916257,
+      "a_correct_b_wrong": 91,
+      "a_wrong_b_correct": 103,
+      "mcnemar_p": 0.4297474950144781,
+      "holm_p_adj_m20": 1.0
+    },
+    {
+      "comparison": "Learned_V1_Spatial_vs_Learned_V1_9Action",
+      "budget": 5,
+      "risk_diff": -0.007325013564839935,
+      "ci95_low": -0.01401324722549414,
+      "ci95_high": -0.0007972748075722913,
+      "a_correct_b_wrong": 78,
+      "a_wrong_b_correct": 51,
+      "mcnemar_p": 0.021702953562836455,
+      "holm_p_adj_m20": 0.238732489191201
+    },
+    {
+      "comparison": "Learned_V1_Spatial_vs_Global_A0",
+      "budget": 5,
+      "risk_diff": -0.04584915897992404,
+      "ci95_low": -0.058173515016932235,
+      "ci95_high": -0.034498773998330574,
+      "a_correct_b_wrong": 266,
+      "a_wrong_b_correct": 97,
+      "mcnemar_p": 2.5505969797029997e-19,
+      "holm_p_adj_m20": 4.591074563465399e-18
+    }
+  ],
+  "action_counts_executed": {
+    "A1": 3204,
+    "A3": 2037,
+    "A4": 2259,
+    "A5": 2623,
+    "A6": 2551
+  },
+  "step1_action_distribution": {
+    "A1": 1846,
+    "A3": 80,
+    "A4": 177,
+    "A5": 343,
+    "A6": 760,
+    "STOP_B0": 480
+  },
+  "total_acquisitions_executed": 12674,
+  "per_class_b5_sensitivity": {
+    "MEL": {
+      "n": 686,
+      "spatial_policy_sens": 0.5670553935860059,
+      "v1_9act_sens": 0.5670553935860059,
+      "cal_stop_sens": 0.5408163265306123
+    },
+    "NV": {
+      "n": 1871,
+      "spatial_policy_sens": 0.8343132014965259,
+      "v1_9act_sens": 0.8246926777124532,
+      "cal_stop_sens": 0.8556921432389096
+    },
+    "BCC": {
+      "n": 466,
+      "spatial_policy_sens": 0.7982832618025751,
+      "v1_9act_sens": 0.7939914163090128,
+      "cal_stop_sens": 0.7854077253218884
+    },
+    "AKIEC": {
+      "n": 221,
+      "spatial_policy_sens": 0.4660633484162896,
+      "v1_9act_sens": 0.4117647058823529,
+      "cal_stop_sens": 0.3212669683257919
+    },
+    "BKL": {
+      "n": 398,
+      "spatial_policy_sens": 0.6582914572864321,
+      "v1_9act_sens": 0.6633165829145728,
+      "cal_stop_sens": 0.7211055276381909
+    },
+    "DF": {
+      "n": 25,
+      "spatial_policy_sens": 0.72,
+      "v1_9act_sens": 0.8,
+      "cal_stop_sens": 0.72
+    },
+    "VASC": {
+      "n": 19,
+      "spatial_policy_sens": 0.7894736842105263,
+      "v1_9act_sens": 0.8421052631578947,
+      "cal_stop_sens": 0.7894736842105263
+    }
+  }
+}

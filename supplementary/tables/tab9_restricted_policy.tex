@@ -1,0 +1,35 @@
+\begin{table}[!htbp]
+\centering
+\caption{Controlled post-hoc candidate-masking ablation restricting Learned Policy~V1 inference to the shared five-action spatial inventory $\{A_1, A_3, A_4, A_5, A_6\}$ ($N=3{,}686$ held-out test images; $K=1{,}972$ grouping units; intact state representation $\mathrm{history}+\mathrm{mask}=1$). Exact paired McNemar $p_{\mathrm{adj}}$ values reflect Holm--Bonferroni control across the $m=20$ ablation comparison family.}
+\label{tab:restricted_policy}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}cccccccc@{}}
+\toprule
+\multicolumn{8}{@{}l}{\textbf{Panel A: Budget Trajectory of Restricted Spatial Policy vs.\ Fixed CAL-Stop and Full 9-Action Policy V1}} \\
+\midrule
+Budget & Views / Img & Early Stop (\%) & Spatial Risk (\%) [95\% CI] & Spatial Acc (\%) & Bal.\ Acc (\%) & $p_{\mathrm{adj}}$ vs.\ CAL-Stop & $p_{\mathrm{adj}}$ vs.\ 9-Act V1 \\
+\midrule
+$B=1$ & 0.87 & 13.02\% & 28.02\% [25.82, 30.38] & 71.98\% & 68.20\% & 1.0000 & 0.0768 \\
+$B=2$ & 1.60 & 27.32\% & 26.64\% [24.42, 28.90] & 73.36\% & 70.10\% & 1.0000 & 0.1028 \\
+$B=3$ & 2.29 & 30.58\% & 26.13\% [23.90, 28.41] & 73.87\% & 69.70\% & 1.0000 & 0.0080 \\
+$B=4$ & 2.90 & 39.39\% & 25.99\% [23.78, 28.26] & 74.01\% & 69.20\% & 1.0000 & 0.1852 \\
+$B=5$ & 3.44 & 45.85\% & 26.21\% [23.99, 28.52] & 73.79\% & 69.05\% & 1.0000 & 0.2387 \\
+\midrule
+\multicolumn{8}{@{}l}{\textbf{Panel B: $B=5$ Per-Class Sensitivity (\%) Under Equalized Spatial Inventory ($12{,}674$ Views Executed)}} \\
+\midrule
+Class & Support ($n$) & Spatial V1 Sens. & 9-Action V1 Sens. & CAL-Stop Sens. & $\Delta$ vs.\ CAL-Stop (pp) & $\Delta$ vs.\ 9-Act V1 (pp) & Executed Spatial Counts \\
+\midrule
+MEL & 686 & 56.71\% & 56.71\% & 54.08\% & +2.62 & +0.00 & $A_1$: 3,204 \\
+NV & 1,871 & 83.43\% & 82.47\% & 85.57\% & -2.14 & +0.96 & $A_3$: 2,037 \\
+BCC & 466 & 79.83\% & 79.40\% & 78.54\% & +1.29 & +0.43 & $A_4$: 2,259 \\
+AKIEC & 221 & 46.61\% & 41.18\% & 32.13\% & +14.48 & +5.43 & $A_5$: 2,623 \\
+BKL & 398 & 65.83\% & 66.33\% & 72.11\% & -6.28 & -0.50 & $A_6$: 2,551 \\
+DF$^\dagger$ & 25 & 72.00\% & 80.00\% & 72.00\% & +0.00 & -8.00 & 0 non-spatial \\
+VASC$^\dagger$ & 19 & 78.95\% & 84.21\% & 78.95\% & +0.00 & -5.26 & STOP$_{B=0}$: 480 \\
+\bottomrule
+\multicolumn{8}{@{}l}{\footnotesize $^\dagger$Sparse stratum ($n \le 30$). At $B=5$, Spatial V1 vs.\ Global $A_0$ yields $\Delta\mathrm{Risk}=-4.58$ pp ($p_{\mathrm{adj}}=4.59\times 10^{-18}$); vs.\ 9-Act V1 yields raw $p=0.0217$ ($p_{\mathrm{adj}}=0.2387$).}
+\end{tabular}%
+}
+\end{table}

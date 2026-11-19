@@ -1,0 +1,13 @@
+{
+  "experiment": "Phase G Mondrian Class-Conditional Split-Conformal Prediction (LAC)",
+  "protocol_status": "EXECUTED_POST_HOC_WITHOUT_TEST_TUNING",
+  "alpha": 0.1,
+  "split_seed": 20261112,
+  "boot_seed": 20261112,
+  "n_boot": 2000,
+  "n_fit": 698,
+  "n_conf": 703,
+  "T_fit": 0.8556897183218838,
+  "cal_npz_sha256": "623c52630c42fe2af9ce08f281c54fbf1afc6ae3978899ca6aa89e3668f79589",
+  "test_npz_sha256": "4f5346ee82ee6686f1d523d04dc17c6cf76d20b02d7cd39a4f52f05b7b98d33a"
+}

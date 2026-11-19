@@ -1,0 +1,224 @@
+{
+  "source_quarantined_file": "_quarantined/old_data/mlflow.db (excluded from clean release)",
+  "required_for_v3_2_reproducibility": false,
+  "audit_finding": "Historical local SQLite MLflow DB containing 7 early 1-epoch baseline scaffold test runs (6 referencing synthetic placeholder data/test_dataset_v2 and 1 referencing data/ham10000) with 0 logged metrics, local filesystem artifact URIs, and Windows username tags. Original DB is preserved untouched in _quarantined/old_data/mlflow.db and excluded verbatim. Excluding it from P8_10_CLEAN_RELEASE does not erase prior historical Git remote exposure which occurred prior to containment.",
+  "experiments": [
+    {
+      "experiment_id": 0,
+      "name": "Default",
+      "lifecycle_stage": "active"
+    },
+    {
+      "experiment_id": 1,
+      "name": "trustworthy-skin-ai",
+      "lifecycle_stage": "active"
+    }
+  ],
+  "total_runs": 7,
+  "total_logged_metrics": 0,
+  "runs": [
+    {
+      "run_uuid": "45e96b63d07844359b62b838519ad823",
+      "name": "trustworthy_baseline",
+      "experiment_id": 1,
+      "status": "FAILED",
+      "logged_metrics_count": 0,
+      "params": {
+        "seed": "42",
+        "model": "{'_target_': 'src.modules.classification.classifier.SkinLesionClassifier', 'backbone': 'efficientnet_b4', 'num_classes': 7, 'pretrained': True, 'drop_rate': 0.3}",
+        "dataset": "{'name': 'ham10000', 'base_path': 'data/ham10000', 'image_size': 224, 'batch_size': 4, 'num_workers': 4, 'pin_memory': True, 'use_weighted_sampler': True, 'augmentation': 'standard'}",
+        "trainer": "{'max_epochs': 1, 'learning_rate': 0.001, 'weight_decay': 0.0001, 'label_smoothing': 0.1, 'gradient_clip_val': 1.0, 'accumulate_grad_batches': 1, 'precision': '16-mixed', 'accelerator': 'auto', 'devices': 1, 'deterministic': True, 'early_stopping_patience': 10, 'checkpoint_dir': 'checkpoints/', 'strict_mode': True}",
+        "optimizer": "{'name': 'adamw', 'lr': 0.001, 'weight_decay': 0.0001}",
+        "scheduler": "{'name': 'cosine', 'T_max': 50, 'warmup_epochs': 5, 'min_lr': 1e-06}",
+        "loss": "{'name': 'focal', 'gamma': 2.0, 'alpha': None}",
+        "ema": "{'enabled': True, 'decay': 0.999}",
+        "experiment": "{'name': 'trustworthy_baseline', 'project': 'trustworthy-ai'}",
+        "use_wandb": "False",
+        "mlflow": "{'tracking_uri': None, 'experiment_name': 'trustworthy-skin-ai'}"
+      },
+      "tags_sanitized": {
+        "mlflow.user": "[REDACTED_LOCAL_USER]",
+        "mlflow.source.name": "scripts/train_baseline_v2.py",
+        "mlflow.source.type": "LOCAL",
+        "mlflow.source.git.commit": "9d3fa0a377f030a6987d04832e5289ee958d8882",
+        "mlflow.source.git.branch": "main",
+        "mlflow.source.git.repoURL": "[REDACTED_LOCAL_PATH]",
+        "mlflow.runName": "trustworthy_baseline"
+      }
+    },
+    {
+      "run_uuid": "02ea2bea1e35440eba23be4d8bc8229e",
+      "name": "trustworthy_baseline",
+      "experiment_id": 1,
+      "status": "FAILED",
+      "logged_metrics_count": 0,
+      "params": {
+        "seed": "42",
+        "model": "{'_target_': 'src.modules.classification.classifier.SkinLesionClassifier', 'backbone': 'efficientnet_b4', 'num_classes': 7, 'pretrained': True, 'drop_rate': 0.3}",
+        "dataset": "{'name': 'ham10000', 'base_path': 'data/ham10000', 'image_size': 224, 'batch_size': 4, 'num_workers': 4, 'pin_memory': True, 'use_weighted_sampler': True, 'augmentation': 'standard'}",
+        "trainer": "{'max_epochs': 1, 'learning_rate': 0.001, 'weight_decay': 0.0001, 'label_smoothing': 0.1, 'gradient_clip_val': 1.0, 'accumulate_grad_batches': 1, 'precision': '16-mixed', 'accelerator': 'auto', 'devices': 1, 'deterministic': True, 'early_stopping_patience': 10, 'checkpoint_dir': 'checkpoints/', 'strict_mode': True}",
+        "optimizer": "{'name': 'adamw', 'lr': 0.001, 'weight_decay': 0.0001}",
+        "scheduler": "{'name': 'cosine', 'T_max': 50, 'warmup_epochs': 5, 'min_lr': 1e-06}",
+        "loss": "{'name': 'focal', 'gamma': 2.0, 'alpha': None}",
+        "ema": "{'enabled': True, 'decay': 0.999}",
+        "experiment": "{'name': 'trustworthy_baseline', 'project': 'trustworthy-ai'}",
+        "use_wandb": "False",
+        "mlflow": "{'tracking_uri': None, 'experiment_name': 'trustworthy-skin-ai'}"
+      },
+      "tags_sanitized": {
+        "mlflow.user": "[REDACTED_LOCAL_USER]",
+        "mlflow.source.name": "scripts/train_baseline_v2.py",
+        "mlflow.source.type": "LOCAL",
+        "mlflow.source.git.commit": "9d3fa0a377f030a6987d04832e5289ee958d8882",
+        "mlflow.source.git.branch": "main",
+        "mlflow.source.git.repoURL": "[REDACTED_LOCAL_PATH]",
+        "mlflow.runName": "trustworthy_baseline"
+      }
+    },
+    {
+      "run_uuid": "3afe3e24c7e345dda15bf2395c5db338",
+      "name": "trustworthy_baseline",
+      "experiment_id": 1,
+      "status": "FAILED",
+      "logged_metrics_count": 0,
+      "params": {
+        "seed": "42",
+        "model": "{'_target_': 'src.modules.classification.classifier.SkinLesionClassifier', 'backbone': 'efficientnet_b4', 'num_classes': 7, 'pretrained': True, 'drop_rate': 0.3}",
+        "dataset": "{'name': 'ham10000', 'base_path': 'data/ham10000', 'image_size': 224, 'batch_size': 4, 'num_workers': 4, 'pin_memory': True, 'use_weighted_sampler': True, 'augmentation': 'standard'}",
+        "trainer": "{'max_epochs': 1, 'learning_rate': 0.001, 'weight_decay': 0.0001, 'label_smoothing': 0.1, 'gradient_clip_val': 1.0, 'accumulate_grad_batches': 1, 'precision': '16-mixed', 'accelerator': 'auto', 'devices': 1, 'deterministic': True, 'early_stopping_patience': 10, 'checkpoint_dir': 'checkpoints/', 'strict_mode': True}",
+        "optimizer": "{'name': 'adamw', 'lr': 0.001, 'weight_decay': 0.0001}",
+        "scheduler": "{'name': 'cosine', 'T_max': 50, 'warmup_epochs': 5, 'min_lr': 1e-06}",
+        "loss": "{'name': 'focal', 'gamma': 2.0, 'alpha': None}",
+        "ema": "{'enabled': True, 'decay': 0.999}",
+        "experiment": "{'name': 'trustworthy_baseline', 'project': 'trustworthy-ai'}",
+        "use_wandb": "False",
+        "mlflow": "{'tracking_uri': None, 'experiment_name': 'trustworthy-skin-ai'}"
+      },
+      "tags_sanitized": {
+        "mlflow.user": "[REDACTED_LOCAL_USER]",
+        "mlflow.source.name": "scripts/train_baseline_v2.py",
+        "mlflow.source.type": "LOCAL",
+        "mlflow.source.git.commit": "9d3fa0a377f030a6987d04832e5289ee958d8882",
+        "mlflow.source.git.branch": "main",
+        "mlflow.source.git.repoURL": "[REDACTED_LOCAL_PATH]",
+        "mlflow.runName": "trustworthy_baseline"
+      }
+    },
+    {
+      "run_uuid": "fa5eb4e5743245dc93fa53fba4b67e0b",
+      "name": "trustworthy_baseline",
+      "experiment_id": 1,
+      "status": "FAILED",
+      "logged_metrics_count": 0,
+      "params": {
+        "seed": "42",
+        "model": "{'_target_': 'src.modules.classification.classifier.SkinLesionClassifier', 'backbone': 'efficientnet_b4', 'num_classes': 7, 'pretrained': True, 'drop_rate': 0.3}",
+        "dataset": "{'name': 'ham10000', 'base_path': 'data/test_dataset_v2', 'image_size': 224, 'batch_size': 4, 'num_workers': 4, 'pin_memory': True, 'use_weighted_sampler': True, 'augmentation': 'standard'}",
+        "trainer": "{'max_epochs': 1, 'learning_rate': 0.001, 'weight_decay': 0.0001, 'label_smoothing': 0.1, 'gradient_clip_val': 1.0, 'accumulate_grad_batches': 1, 'precision': '16-mixed', 'accelerator': 'auto', 'devices': 1, 'deterministic': True, 'early_stopping_patience': 10, 'checkpoint_dir': 'checkpoints/', 'strict_mode': True}",
+        "optimizer": "{'name': 'adamw', 'lr': 0.001, 'weight_decay': 0.0001}",
+        "scheduler": "{'name': 'cosine', 'T_max': 50, 'warmup_epochs': 5, 'min_lr': 1e-06}",
+        "loss": "{'name': 'focal', 'gamma': 2.0, 'alpha': None}",
+        "ema": "{'enabled': True, 'decay': 0.999}",
+        "experiment": "{'name': 'trustworthy_baseline', 'project': 'trustworthy-ai'}",
+        "use_wandb": "False",
+        "mlflow": "{'tracking_uri': None, 'experiment_name': 'trustworthy-skin-ai'}"
+      },
+      "tags_sanitized": {
+        "mlflow.user": "[REDACTED_LOCAL_USER]",
+        "mlflow.source.name": "scripts/train_baseline_v2.py",
+        "mlflow.source.type": "LOCAL",
+        "mlflow.source.git.commit": "9d3fa0a377f030a6987d04832e5289ee958d8882",
+        "mlflow.source.git.branch": "main",
+        "mlflow.source.git.repoURL": "[REDACTED_LOCAL_PATH]",
+        "mlflow.runName": "trustworthy_baseline"
+      }
+    },
+    {
+      "run_uuid": "4f00faabbaca4504bf446cb217b84eec",
+      "name": "trustworthy_baseline",
+      "experiment_id": 1,
+      "status": "FAILED",
+      "logged_metrics_count": 0,
+      "params": {
+        "seed": "42",
+        "model": "{'_target_': 'src.modules.classification.classifier.SkinLesionClassifier', 'backbone': 'efficientnet_b4', 'num_classes': 7, 'pretrained': True, 'drop_rate': 0.3}",
+        "dataset": "{'name': 'ham10000', 'base_path': 'data/test_dataset_v2', 'image_size': 224, 'batch_size': 4, 'num_workers': 4, 'pin_memory': True, 'use_weighted_sampler': True, 'augmentation': 'standard'}",
+        "trainer": "{'max_epochs': 1, 'learning_rate': 0.001, 'weight_decay': 0.0001, 'label_smoothing': 0.1, 'gradient_clip_val': 1.0, 'accumulate_grad_batches': 1, 'precision': '16-mixed', 'accelerator': 'auto', 'devices': 1, 'deterministic': True, 'early_stopping_patience': 10, 'checkpoint_dir': 'checkpoints/', 'strict_mode': True}",
+        "optimizer": "{'name': 'adamw', 'lr': 0.001, 'weight_decay': 0.0001}",
+        "scheduler": "{'name': 'cosine', 'T_max': 50, 'warmup_epochs': 5, 'min_lr': 1e-06}",
+        "loss": "{'name': 'focal', 'gamma': 2.0, 'alpha': None}",
+        "ema": "{'enabled': True, 'decay': 0.999}",
+        "experiment": "{'name': 'trustworthy_baseline', 'project': 'trustworthy-ai'}",
+        "use_wandb": "False",
+        "mlflow": "{'tracking_uri': None, 'experiment_name': 'trustworthy-skin-ai'}"
+      },
+      "tags_sanitized": {
+        "mlflow.user": "[REDACTED_LOCAL_USER]",
+        "mlflow.source.name": "scripts/train_baseline_v2.py",
+        "mlflow.source.type": "LOCAL",
+        "mlflow.source.git.commit": "9d3fa0a377f030a6987d04832e5289ee958d8882",
+        "mlflow.source.git.branch": "main",
+        "mlflow.source.git.repoURL": "[REDACTED_LOCAL_PATH]",
+        "mlflow.runName": "trustworthy_baseline"
+      }
+    },
+    {
+      "run_uuid": "692ba4c900304644a474a0765aa5064e",
+      "name": "trustworthy_baseline",
+      "experiment_id": 1,
+      "status": "FINISHED",
+      "logged_metrics_count": 0,
+      "params": {
+        "seed": "42",
+        "model": "{'_target_': 'src.modules.classification.classifier.SkinLesionClassifier', 'backbone': 'efficientnet_b4', 'num_classes': 7, 'pretrained': True, 'drop_rate': 0.3}",
+        "dataset": "{'name': 'ham10000', 'base_path': 'data/test_dataset_v2', 'image_size': 224, 'batch_size': 4, 'num_workers': 4, 'pin_memory': True, 'use_weighted_sampler': True, 'augmentation': 'standard'}",
+        "trainer": "{'max_epochs': 1, 'learning_rate': 0.001, 'weight_decay': 0.0001, 'label_smoothing': 0.1, 'gradient_clip_val': 1.0, 'accumulate_grad_batches': 1, 'precision': '16-mixed', 'accelerator': 'auto', 'devices': 1, 'deterministic': True, 'early_stopping_patience': 10, 'checkpoint_dir': 'checkpoints/', 'strict_mode': True}",
+        "optimizer": "{'name': 'adamw', 'lr': 0.001, 'weight_decay': 0.0001}",
+        "scheduler": "{'name': 'cosine', 'T_max': 50, 'warmup_epochs': 5, 'min_lr': 1e-06}",
+        "loss": "{'name': 'focal', 'gamma': 2.0, 'alpha': None}",
+        "ema": "{'enabled': True, 'decay': 0.999}",
+        "experiment": "{'name': 'trustworthy_baseline', 'project': 'trustworthy-ai'}",
+        "use_wandb": "False",
+        "mlflow": "{'tracking_uri': None, 'experiment_name': 'trustworthy-skin-ai'}"
+      },
+      "tags_sanitized": {
+        "mlflow.user": "[REDACTED_LOCAL_USER]",
+        "mlflow.source.name": "scripts/train_baseline_v2.py",
+        "mlflow.source.type": "LOCAL",
+        "mlflow.source.git.commit": "9d3fa0a377f030a6987d04832e5289ee958d8882",
+        "mlflow.source.git.branch": "main",
+        "mlflow.source.git.repoURL": "[REDACTED_LOCAL_PATH]",
+        "mlflow.runName": "trustworthy_baseline"
+      }
+    },
+    {
+      "run_uuid": "cd62343b1e1943fdac6dd95562ab8314",
+      "name": "trustworthy_baseline",
+      "experiment_id": 1,
+      "status": "FINISHED",
+      "logged_metrics_count": 0,
+      "params": {
+        "seed": "42",
+        "model": "{'_target_': 'src.modules.classification.classifier.SkinLesionClassifier', 'backbone': 'efficientnet_b4', 'num_classes': 7, 'pretrained': True, 'drop_rate': 0.3}",
+        "dataset": "{'name': 'ham10000', 'base_path': 'data/test_dataset_v2', 'image_size': 224, 'batch_size': 4, 'num_workers': 4, 'pin_memory': True, 'use_weighted_sampler': True, 'augmentation': 'standard'}",
+        "trainer": "{'max_epochs': 1, 'learning_rate': 0.001, 'weight_decay': 0.0001, 'label_smoothing': 0.1, 'gradient_clip_val': 1.0, 'accumulate_grad_batches': 1, 'precision': '16-mixed', 'accelerator': 'auto', 'devices': 1, 'deterministic': True, 'early_stopping_patience': 10, 'checkpoint_dir': 'checkpoints/', 'strict_mode': True}",
+        "optimizer": "{'name': 'adamw', 'lr': 0.001, 'weight_decay': 0.0001}",
+        "scheduler": "{'name': 'cosine', 'T_max': 50, 'warmup_epochs': 5, 'min_lr': 1e-06}",
+        "loss": "{'name': 'focal', 'gamma': 2.0, 'alpha': None}",
+        "ema": "{'enabled': True, 'decay': 0.999}",
+        "experiment": "{'name': 'trustworthy_baseline', 'project': 'trustworthy-ai'}",
+        "use_wandb": "False",
+        "mlflow": "{'tracking_uri': None, 'experiment_name': 'trustworthy-skin-ai'}"
+      },
+      "tags_sanitized": {
+        "mlflow.user": "[REDACTED_LOCAL_USER]",
+        "mlflow.source.name": "scripts/train_baseline_v2.py",
+        "mlflow.source.type": "LOCAL",
+        "mlflow.source.git.commit": "2810a9af7c00fdc241c8147335bd272aa8b61bea",
+        "mlflow.source.git.branch": "main",
+        "mlflow.source.git.repoURL": "[REDACTED_LOCAL_PATH]",
+        "mlflow.runName": "trustworthy_baseline"
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+\begin{table}[!htbp]
+\centering
+\caption{ISIC 2019 group-disjoint partition census and class distribution across development, validation, split-conformal calibration ($\mathcal{D}_{\mathrm{fit}}$, $\mathcal{D}_{\mathrm{conf}}$), and held-out test cohorts. Operational grouping units combine observed \texttt{lesion\_id} clusters with missing-ID singletons ($0$ pairwise image or lesion-ID overlap across Train, Val, Cal, and Test).}
+\label{tab:dataset_partition}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lrrrrrrrrr@{}}
+\toprule
+Partition & Images ($N$) & Groups $K$ (Obs + Sing) & MEL & NV & BCC & AKIEC & BKL & DF & VASC \\
+\midrule
+Train & 16,702 & 9,198 (7,811 + 1,387) & 2,991 & 8,461 & 2,211 & 985 & 1,697 & 175 & 182 \\
+Validation & 3,542 & 1,972 (1,671 + 301) & 611 & 1,819 & 444 & 226 & 385 & 24 & 33 \\
+Calibration ($\mathcal{D}_{\mathrm{cal}}$) & 1,401 & 789 (670 + 119) & 234 & 724 & 202 & 63 & 144 & 15 & 19 \\
+\quad $\hookrightarrow$ Fit ($\mathcal{D}_{\mathrm{fit}}$) & 698 & 393 (336 + 57) & 133 & 341 & 99 & 33 & 77 & 6 & 9 \\
+\quad $\hookrightarrow$ Conf ($\mathcal{D}_{\mathrm{conf}}$) & 703 & 396 (334 + 62) & 101 & 383 & 103 & 30 & 67 & 9 & 10 \\
+Held-Out Test & 3,686 & 1,972 (1,695 + 277) & 686 & 1,871 & 466 & 221 & 398 & 25 & 19 \\
+\midrule
+\textbf{Total ISIC 2019} & 25,331 & 13,931 (11,847 + 2,084) & 4,522 & 12,875 & 3,323 & 1,495 & 2,624 & 239 & 253 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

@@ -1,0 +1,15 @@
+# DERMA-ACT V2 System Architecture (Bounded Technical Summary)
+
+This summary reflects verified DERMA-ACT V2 module implementations in `src/modules/active_perception/` and `research/derma_act/core/`, aligned with manuscript revision `PAPER_DRAFT_Q2_V3_2_1_PRE_SUBMISSION`.
+
+1. **Frozen Base Classifier (`EfficientNet-B4`, `timm/efficientnet_b4.ra2_in1k`):** Trained on ISIC 2019 7-class dermoscopy labels (`mel`, `nv`, `bcc`, `akiec`, `bkl`, `df`, `vasc`), temperature-calibrated post-hoc ($T_{\mathrm{full}} = 0.8518$ on $\mathcal{D}_{\mathrm{cal}}$; $T_{\mathrm{fit}} = 0.8557$ on $\mathcal{D}_{\mathrm{fit}}$ for split-conformal evaluation). Base `.ckpt` weights are excluded from Git (see [provenance/MODEL_PROVENANCE.md](../provenance/MODEL_PROVENANCE.md)).
+2. **Deterministic Virtual Observations (`A0`–`A9`, `src/modules/active_perception/actions.py`, `research/derma_act/core/transforms.py`):**
+   - `A0`: Global baseline view (`Resize(291) -> CenterCrop(224)` with ImageNet normalization).
+   - `A1`–`A6`: Deterministic spatial crops (center, border, upper, lower, left, right) followed by `Resize(224)` and ImageNet normalization.
+   - `A7`: High-frequency Gabor texture bank (`np.uint8` saturation/zero-collapse flaw documented in [docs/LIMITATIONS.md](LIMITATIONS.md)).
+   - `A8`: Color-channel suppression.
+   - `A9`: Deterministic morphological dark-structure closing/inpainting mask (non-semantic artifact suppression, not an anatomical hair detector).
+3. **28-D State Representation (`research/derma_act/core/state.py`):** Concatenates current 7-class fused probabilities, 3 scalar uncertainty descriptors (Shannon entropy with `EPS=1e-12`, max confidence, top-2 margin), 9-D acquisition history vector, and 9-D remaining candidate mask enforcing `history[k] + mask[k] = 1`.
+4. **Recursive Arithmetic Probability Fusion (`research/derma_act/core/fusion.py`):** Updates $p_{t+1} = (b \cdot p_t + p_{\mathrm{cand}}) / (b + 1)$ for $b \ge 1$ fused observations (explicit running arithmetic mean across deterministically derived views, **not** Bayesian posterior inference).
+5. **Finite-Horizon Surrogate Policy (`MultiHeadActionPolicy`, `src/modules/active_perception/policy.py`, `6,787` parameters):** Shared MLP trunk (`28 + 9 -> 64 -> 64`) with three linear heads predicting $\Delta \hat{Q}$, $\Delta \hat{C}$, and next-step `argmax` decision-flip logit for candidate utility $U = \lambda_Q \Delta \hat{Q} + \lambda_C \Delta \hat{C} - \lambda_I \sigma(\mathrm{logit}) - \lambda_K \cdot 1.0$ with frozen weights `(5.0, 1.0, 0.5, 0.25)` and stopping threshold $\tau = -0.4286$ (`-3/7`) — a supervised surrogate value estimator, **not** a formally Bellman-optimized POMDP.
+6. **Split-Conformal & Mondrian Uncertainty (`src/modules/selective_decision/conformal.py`):** Least Ambiguous Set-Valued Classifier (LAC) calibrated on `D_conf` ($N = 703$, $k^* = 634$, $q^* = 0.904267$ at $\alpha = 0.10$), plus post-hoc image-level Mondrian class-conditional evaluation.

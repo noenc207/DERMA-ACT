@@ -1,0 +1,28 @@
+\begin{table}[!htbp]
+\centering
+\caption{Methodological limitations, structural confounds, and explicit scope boundaries across the unified benchmark evaluation.}
+\label{tab:limitations_claim_boundaries}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}p{3.0cm}p{5.5cm}p{5.5cm}@{}}
+\toprule
+Domain & Verified Empirical / Structural Constraint & Prohibited Interpretation / Claim Boundary \\
+\midrule
+Action Inventory Asymmetry & Learned Policy V1 queries $A_1$--$A_9$ (selecting $A_8$ in 74.96\% and $A_9$ in 20.51\% of test episodes), whereas Fixed comparators traverse only $A_6 \to A_5 \to A_3 \to A_1 \to A_4$. Post-hoc inference masking equalizes test candidate sets ($\{A_1,A_3,A_4,A_5,A_6\}$) using weights trained under 9 actions. & Precludes isolated causal attribution under a retrained 5-action policy; post-hoc masking does not replace full policy retraining. \\
+\midrule
+Comparator Parity & Exact McNemar tests show $p_{\mathrm{adj}} \ge 0.319$ ($B=1$--$5$) between V1 and Validation-Ranked CAL-Stop ($\Delta \mathrm{Risk} = +0.98$ pp at $B=5$) and $p_{\mathrm{adj}} \ge 0.207$ vs.\ Unstopped (and $p_{\mathrm{adj}}=1.0$ under spatial restriction). & Does not establish policy optimality, Pareto dominance, or formal statistical equivalence. \\
+\midrule
+Operator Numerical Artifacts & $A_7$ undergoes 8-bit unsigned clipping before max-pooling (99.97\% median saturation; 25.69\% zero-collapse in Val) and $A_9$ masks dark structures indiscriminately (11.55\% mean area). & $A_9$ is non-semantic morphological masking, not validated hair removal; $A_7$ rarity (6/14,815) cannot prove learned defect rejection. \\
+\midrule
+Probability Fusion Rule & $p_{t+1} = (n_t p_t + p_{\mathrm{new}})/(n_t+1)$ combines deterministically transformed crops of one fixed photograph without likelihood weighting. & Strictly Recursive Arithmetic Probability Fusion, not Bayesian posterior inference or guaranteed variance reduction. \\
+\midrule
+Grouping vs.\ Patient IDs & ISIC 2019 omits patient IDs ($11{,}847$ lesion IDs + $2{,}084$ singletons); Analyses 1--3 share Test ($N=3{,}686$) and Analyses 1--2 share $\mathcal{D}_{\mathrm{cal}}$. & Cluster CIs account for known lesion-ID grouping, not patient-level correlation; within-partition exchangeability unverified. \\
+\midrule
+Conformal Class Coverage & Global LAC ($q^* = 0.904267$, $k^*=634$) attains 90.67\% overall image coverage, while AKIEC drops to 74.21\% (70.59\% under image-level Mondrian due to small $K_c$) and DF/VASC are sparse. & Provides no class-conditional coverage guarantee on rare/small strata or clinical triage clearance. \\
+\midrule
+Instability Head & AUROC $0.9473$ and AP $0.5172$ quantify ranking over $M=14{,}815$ realized on-policy transitions without a prespecified runtime trigger. & Ranking metric only; does not establish prospective error prevention or calibrated clinical intervention. \\
+\midrule
+Perturbations \& External Scope & Digital perturbations evaluate $A_0$ on $N=50$ held-out Val images; no powered, protocol-verified external clinical dataset evaluation is included. & Single-benchmark ISIC 2019 internal study; zero external diagnostic generalization or reader validation claimed. \\
+\bottomrule
+\end{tabular}
+\end{table}

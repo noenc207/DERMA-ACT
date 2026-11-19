@@ -1,0 +1,24 @@
+\begin{table}[!htbp]
+\centering
+\caption{Evidence-classified offline training and hyperparameter-selection protocol for the multi-head sequential action policy.}
+\label{tab:supp_policy_protocol}
+\scriptsize
+\setlength{\tabcolsep}{3.0pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}p{2.7cm}p{6.6cm}p{4.8cm}@{}}
+\toprule
+Component & Verified Executed Specification & Evidence Tag \\
+\midrule
+State \& Action Input & $s_t \in \mathbb{R}^{28}$: [$p_t(7)$, $H(p_t)(1)$, $\max p_t(1)$, $\mathrm{margin}(1)$, $\mathrm{history}(9)$, $\mathrm{mask}(9)$] concatenated with 9-dim action one-hot ($37$ total inputs). & \texttt{VERIFIED\_FROM\_CODE}, \texttt{VERIFIED\_FROM\_CHECKPOINT\_METADATA} \\
+Trunk \& Three Heads & Shared trunk \texttt{Linear(37,64)} $\to$ \texttt{ReLU} $\to$ \texttt{Linear(64,64)} $\to$ \texttt{ReLU}; three linear scalar heads (\texttt{64}$\to$\texttt{1}, squeezed): $\Delta\hat{Q}$ (quality), $\Delta\hat{C}$ (confidence), $\mathrm{logit}_i$ (flip); $6{,}787$ params. & \texttt{VERIFIED\_FROM\_CODE}, \texttt{VERIFIED\_FROM\_CHECKPOINT\_METADATA} \\
+Supervision Targets & $\Delta Q = (-\log p_t(y)) - (-\log p_{t+1}(y))$ (NLL reduction), $\Delta C = \max p_{t+1} - \max p_t$, binary flip $I = \mathbb{I}[\hat{y}_{t+1} \neq \hat{y}_t]$ computed under recursive arithmetic averaging. & \texttt{VERIFIED\_FROM\_CODE} \\
+Trajectory Generation \& Splits & Frozen per-action dev predictions ($N=21{,}645$: Train $16{,}702$, Val $3{,}542$, Cal $1{,}401$); NumPy RNG \texttt{seed=42} samples $35$ subsets per image ($757{,}575$ states retained: $584{,}570$ Train, $123{,}970$ Val, $49{,}035$ Cal), expanding to $3{,}941{,}672$ Train and $835{,}912$ Val pairs (strictly disjoint from Test) with $\mathrm{history}[k]+\mathrm{mask}[k]=1$. & \texttt{VERIFIED\_FROM\_CODE} \\
+Objective \& Optimizer & Unweighted ($1:1:1$) sum $\mathrm{MSE}(\Delta\hat{Q},\Delta Q)+\mathrm{MSE}(\Delta\hat{C},\Delta C)+\mathrm{BCEWithLogits}(\mathrm{logit}_i, I)$; \texttt{AdamW(lr=1e-3, weight\_decay=1e-4)}, Train BS $512$ (shuffled), Val BS $2{,}048$, $10$ epochs. & \texttt{VERIFIED\_FROM\_CODE} \\
+Checkpoint Selection & Best model saved whenever Validation total loss improved; no \texttt{EarlyStopping} callback implemented in script. & \texttt{VERIFIED\_FROM\_CODE} \\
+Policy Seed \& Loss Log & No explicit PyTorch weight-init / DataLoader seed set in policy training script; winning epoch index (out of $10$) and epoch loss curve not saved (prevents exact bit-for-bit retraining from scratch; frozen policy weights and dev states preserved). & \texttt{NOT\_RECOVERABLE} \\
+Utility Weights ($\lambda$) & $81$-point grid search on Val ($N=3{,}542$) minimizing summed Top-1 risk across $B=0..5$ $\to (\lambda_Q,\lambda_C,\lambda_I,\lambda_K)=(5.0, 1.0, 0.5, 0.25)$. & \texttt{VERIFIED\_FROM\_CODE}, \texttt{VERIFIED\_FROM\_CONFIG} \\
+Stopping Threshold ($\tau$) & $50$-point grid $\tau \in [-2.0, 5.0]$ on Cal ($N=1{,}401$) minimizing summed Top-1 risk across $B=0..5$ $\to \tau = -0.4285714285714286$ ($-3/7$). & \texttt{VERIFIED\_FROM\_CODE}, \texttt{VERIFIED\_FROM\_CONFIG} \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}

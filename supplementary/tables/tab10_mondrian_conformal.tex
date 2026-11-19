@@ -1,0 +1,32 @@
+\begin{table}[!htbp]
+\centering
+\caption{Image-level Mondrian class-conditional vs.\ pooled split-conformal LAC prediction sets on global view $A_0$ ($\alpha=0.10$, $T_{\mathrm{fit}}=0.855690$ from $\mathcal{D}_{\mathrm{fit}}=698$; test $N=3{,}686, K=1{,}972$). All seven classes satisfy $k_c = \lceil (n_c+1)(1-\alpha)\rceil \le n_c$ at image level on $\mathcal{D}_{\mathrm{conf}}$ ($N_{\mathrm{conf}}=703$), although DF and VASC lack sufficient calibration clusters ($K_c < 9$) for cluster-level quantiles.}
+\label{tab:mondrian_conformal}
+\scriptsize
+\setlength{\tabcolsep}{3.0pt}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lrrrrrrrr@{}}
+\toprule
+\multicolumn{9}{@{}l}{\textbf{Panel A: Aggregate Held-Out Conformal Coverage and Efficiency ($N=3{,}686$, $K=1{,}972$)}} \\
+\midrule
+Method & \multicolumn{2}{c}{Marginal Cov.\ [95\% Cluster CI]} & \multicolumn{2}{c}{Equal-Cluster Cov.} & Mean Size [95\% CI] & Singleton Rate & Worst-Class Cov. & Empty / Full \\
+\midrule
+Pooled LAC ($k^*=634$) & \multicolumn{2}{c}{90.67\% [89.14, 92.12]} & \multicolumn{2}{c}{92.80\%} & 1.925 [1.882, 1.970] & 38.09\% & 74.21\% & 0.0\% / 0.0\% \\
+Image-Level Mondrian LAC & \multicolumn{2}{c}{90.64\% [89.21, 92.04]} & \multicolumn{2}{c}{93.12\%} & 2.390 [2.334, 2.448] & 27.56\% & 70.59\% & 0.0\% / 0.0\% \\
+\midrule
+\multicolumn{9}{@{}l}{\textbf{Panel B: Class-Conditional Calibration Cutoffs ($\mathcal{D}_{\mathrm{conf}}$) and Test Coverage / Set Size Comparison}} \\
+\midrule
+Class & $n_c$ ($K_c$) Cal & Rank $k_c$ & Cutoff $1{-}q_c$ & Test $n$ ($K$) & Pooled Cov.\ [Wilson CI] & Pooled Size & Mondrian Cov.\ [Wilson CI] & Mondrian Size \\
+\midrule
+MEL & 101 (44) & 92 & 0.0800 & 686 (232) & 88.92\% [86.4, 91.1] & 2.093 & 90.09\% [87.6, 92.1] & 2.525 \\
+NV & 383 (240) & 346 & 0.0974 & 1,871 (1,249) & 94.23\% [93.1, 95.2] & 1.818 & 93.91\% [92.7, 94.9] & 2.313 \\
+BCC & 103 (40) & 94 & 0.2019 & 466 (171) & 92.27\% [89.5, 94.4] & 1.891 & 86.05\% [82.6, 88.9] & 2.371 \\
+AKIEC & 30 (17) & 28 & 0.1325 & 221 (76) & 74.21\% [68.1, 79.5] & 2.199 & 70.59\% [64.3, 76.2] & 2.742 \\
+BKL & 67 (46) & 62 & 0.0515 & 398 (221) & 84.17\% [80.3, 87.4] & 2.050 & 91.71\% [88.6, 94.0] & 2.372 \\
+DF$^\dagger$ & 9 (4) & 9$^*$ & 0.0130 & 25 (11) & 84.00\% [65.3, 93.6] & 1.880 & 100.00\% [86.7, 100.0] & 2.240 \\
+VASC$^\dagger$ & 10 (5) & 10$^*$ & 0.0161 & 19 (12) & 100.00\% [83.2, 100.0] & 1.474 & 100.00\% [83.2, 100.0] & 2.000 \\
+\bottomrule
+\multicolumn{9}{@{}l}{\footnotesize $^\dagger$Sparse test stratum ($n \le 30$). $^*$Hits exact empirical maximum score $s_{(n_c)}$ ($n_c=9$ is the minimum feasible sample size for $\alpha=0.10$); cluster-max quantiles are undefined ($K_c < 9$).}
+\end{tabular}%
+}
+\end{table}

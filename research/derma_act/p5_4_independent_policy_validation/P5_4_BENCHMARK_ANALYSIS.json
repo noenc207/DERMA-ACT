@@ -1,0 +1,743 @@
+{
+  "sample_size": 3686,
+  "cal_frozen_thresholds": {
+    "B_1": 0.9265725725725726,
+    "B_2": 0.9245745745745746,
+    "B_3": 0.9045945945945946,
+    "B_4": 0.8911081081081081,
+    "B_5": 0.8691301301301302
+  },
+  "strategies": {
+    "Global_A0": {
+      "B_0": {
+        "budget": 0,
+        "mean_cost": 0.0,
+        "median_cost": 0.0,
+        "std_cost": 0.0,
+        "risk": 0.30792186652197506,
+        "acc": 0.6920781334780249,
+        "bacc": 0.6882780629695595,
+        "stop_freq": 1.0,
+        "exhaust_freq": 0.0
+      }
+    },
+    "Index_Fixed": {
+      "B_1": {
+        "budget": 1,
+        "mean_cost": 1.0,
+        "median_cost": 1.0,
+        "std_cost": 0.0,
+        "risk": 0.3011394465545306,
+        "acc": 0.6988605534454694,
+        "bacc": 0.7118697358876613,
+        "stop_freq": 0.0,
+        "exhaust_freq": 1.0
+      },
+      "B_2": {
+        "budget": 2,
+        "mean_cost": 2.0,
+        "median_cost": 2.0,
+        "std_cost": 0.0,
+        "risk": 0.2959848073792729,
+        "acc": 0.7040151926207271,
+        "bacc": 0.7091104404649684,
+        "stop_freq": 0.0,
+        "exhaust_freq": 1.0
+      },
+      "B_3": {
+        "budget": 3,
+        "mean_cost": 3.0,
+        "median_cost": 3.0,
+        "std_cost": 0.0,
+        "risk": 0.2767227346717309,
+        "acc": 0.7232772653282691,
+        "bacc": 0.7053952344301532,
+        "stop_freq": 0.0,
+        "exhaust_freq": 1.0
+      },
+      "B_4": {
+        "budget": 4,
+        "mean_cost": 4.0,
+        "median_cost": 4.0,
+        "std_cost": 0.0,
+        "risk": 0.2721106890938687,
+        "acc": 0.7278893109061313,
+        "bacc": 0.6764167654576393,
+        "stop_freq": 0.0,
+        "exhaust_freq": 1.0
+      },
+      "B_5": {
+        "budget": 5,
+        "mean_cost": 5.0,
+        "median_cost": 5.0,
+        "std_cost": 0.0,
+        "risk": 0.266956049918611,
+        "acc": 0.733043950081389,
+        "bacc": 0.6812528015710652,
+        "stop_freq": 0.0,
+        "exhaust_freq": 1.0
+      }
+    },
+    "Val_Ranked_Unstopped": {
+      "B_1": {
+        "budget": 1,
+        "mean_cost": 1.0,
+        "median_cost": 1.0,
+        "std_cost": 0.0,
+        "risk": 0.2802495930548019,
+        "acc": 0.7197504069451981,
+        "bacc": 0.681036833773084,
+        "stop_freq": 0.0,
+        "exhaust_freq": 1.0
+      },
+      "B_2": {
+        "budget": 2,
+        "mean_cost": 2.0,
+        "median_cost": 2.0,
+        "std_cost": 0.0,
+        "risk": 0.27075420510037984,
+        "acc": 0.7292457948996202,
+        "bacc": 0.6744611280528975,
+        "stop_freq": 0.0,
+        "exhaust_freq": 1.0
+      },
+      "B_3": {
+        "budget": 3,
+        "mean_cost": 3.0,
+        "median_cost": 3.0,
+        "std_cost": 0.0,
+        "risk": 0.2650569723277265,
+        "acc": 0.7349430276722735,
+        "bacc": 0.659700026935459,
+        "stop_freq": 0.0,
+        "exhaust_freq": 1.0
+      },
+      "B_4": {
+        "budget": 4,
+        "mean_cost": 4.0,
+        "median_cost": 4.0,
+        "std_cost": 0.0,
+        "risk": 0.26424308193163326,
+        "acc": 0.7357569180683667,
+        "bacc": 0.6822278147707692,
+        "stop_freq": 0.0,
+        "exhaust_freq": 1.0
+      },
+      "B_5": {
+        "budget": 5,
+        "mean_cost": 5.0,
+        "median_cost": 5.0,
+        "std_cost": 0.0,
+        "risk": 0.2588171459576777,
+        "acc": 0.7411828540423223,
+        "bacc": 0.6766127211857944,
+        "stop_freq": 0.0,
+        "exhaust_freq": 1.0
+      }
+    },
+    "Val_Ranked_ConfStop_Independent": {
+      "B_1": {
+        "budget": 1,
+        "frozen_threshold": 0.9265725725725726,
+        "mean_cost": 0.9153553988062941,
+        "median_cost": 1.0,
+        "std_cost": 0.2783521019903827,
+        "risk": 0.2802495930548019,
+        "acc": 0.7197504069451981,
+        "bacc": 0.681036833773084,
+        "stop_freq": 0.08464460119370591,
+        "exhaust_freq": 0.9153553988062941
+      },
+      "B_2": {
+        "budget": 2,
+        "frozen_threshold": 0.9245745745745746,
+        "mean_cost": 1.8147042864894194,
+        "median_cost": 2.0,
+        "std_cost": 0.5749432083285381,
+        "risk": 0.27075420510037984,
+        "acc": 0.7292457948996202,
+        "bacc": 0.6744611280528975,
+        "stop_freq": 0.09549647314161692,
+        "exhaust_freq": 0.9045035268583831
+      },
+      "B_3": {
+        "budget": 3,
+        "frozen_threshold": 0.9045945945945946,
+        "mean_cost": 2.58166033640803,
+        "median_cost": 3.0,
+        "std_cost": 1.0263643750487856,
+        "risk": 0.2650569723277265,
+        "acc": 0.7349430276722735,
+        "bacc": 0.659700026935459,
+        "stop_freq": 0.14460119370591426,
+        "exhaust_freq": 0.8553988062940857
+      },
+      "B_4": {
+        "budget": 4,
+        "frozen_threshold": 0.8911081081081081,
+        "mean_cost": 3.306565382528486,
+        "median_cost": 4.0,
+        "std_cost": 1.4956603092435288,
+        "risk": 0.26424308193163326,
+        "acc": 0.7357569180683667,
+        "bacc": 0.6822278147707692,
+        "stop_freq": 0.17959848073792728,
+        "exhaust_freq": 0.8204015192620727
+      },
+      "B_5": {
+        "budget": 5,
+        "frozen_threshold": 0.8691301301301302,
+        "mean_cost": 3.8977211068909385,
+        "median_cost": 5.0,
+        "std_cost": 2.0478831796378936,
+        "risk": 0.25963103635377105,
+        "acc": 0.740368963646229,
+        "bacc": 0.6762517678951314,
+        "stop_freq": 0.22653282691264243,
+        "exhaust_freq": 0.7734671730873576
+      }
+    },
+    "Learned_V1": {
+      "B_1": {
+        "budget": 1,
+        "mean_cost": 0.9145415084102008,
+        "median_cost": 1.0,
+        "std_cost": 0.2795627618353265,
+        "risk": 0.28594682582745523,
+        "acc": 0.7140531741725448,
+        "bacc": 0.6717185988775204,
+        "stop_freq": 0.08545849158979923,
+        "exhaust_freq": 0.9145415084102008
+      },
+      "B_2": {
+        "budget": 2,
+        "mean_cost": 1.8122626153011394,
+        "median_cost": 2.0,
+        "std_cost": 0.5686906384537124,
+        "risk": 0.27292457948996207,
+        "acc": 0.7270754205100379,
+        "bacc": 0.6909656973346939,
+        "stop_freq": 0.10227889310906131,
+        "exhaust_freq": 0.8977211068909386
+      },
+      "B_3": {
+        "budget": 3,
+        "mean_cost": 2.60119370591427,
+        "median_cost": 3.0,
+        "std_cost": 0.8866518970039232,
+        "risk": 0.2699403147042865,
+        "acc": 0.7300596852957135,
+        "bacc": 0.6932451080351024,
+        "stop_freq": 0.21106890938686923,
+        "exhaust_freq": 0.7889310906131307
+      },
+      "B_4": {
+        "budget": 4,
+        "mean_cost": 3.355398806294086,
+        "median_cost": 4.0,
+        "std_cost": 1.2542307744301302,
+        "risk": 0.26668475311991313,
+        "acc": 0.7333152468800869,
+        "bacc": 0.6841121240718568,
+        "stop_freq": 0.24579489962018447,
+        "exhaust_freq": 0.7542051003798155
+      },
+      "B_5": {
+        "budget": 5,
+        "mean_cost": 4.019262072707542,
+        "median_cost": 5.0,
+        "std_cost": 1.6285262581313078,
+        "risk": 0.269397721106891,
+        "acc": 0.730602278893109,
+        "bacc": 0.700418005651756,
+        "stop_freq": 0.33613673358654367,
+        "exhaust_freq": 0.6638632664134563
+      }
+    },
+    "Greedy_Min_Entropy": {
+      "B_1": {
+        "budget": 1,
+        "mean_cost": 1.0,
+        "median_cost": 1.0,
+        "std_cost": 0.0,
+        "risk": 0.28648941942485073,
+        "acc": 0.7135105805751493,
+        "bacc": 0.7116779642208689,
+        "stop_freq": 0.0,
+        "exhaust_freq": 1.0
+      },
+      "B_2": {
+        "budget": 2,
+        "mean_cost": 2.0,
+        "median_cost": 2.0,
+        "std_cost": 0.0,
+        "risk": 0.283776451437873,
+        "acc": 0.716223548562127,
+        "bacc": 0.7140663937688265,
+        "stop_freq": 0.0,
+        "exhaust_freq": 1.0
+      },
+      "B_3": {
+        "budget": 3,
+        "mean_cost": 3.0,
+        "median_cost": 3.0,
+        "std_cost": 0.0,
+        "risk": 0.2767227346717309,
+        "acc": 0.7232772653282691,
+        "bacc": 0.7105031709719409,
+        "stop_freq": 0.0,
+        "exhaust_freq": 1.0
+      },
+      "B_4": {
+        "budget": 4,
+        "mean_cost": 4.0,
+        "median_cost": 4.0,
+        "std_cost": 0.0,
+        "risk": 0.2740097666847531,
+        "acc": 0.7259902333152469,
+        "bacc": 0.7115386329214889,
+        "stop_freq": 0.0,
+        "exhaust_freq": 1.0
+      },
+      "B_5": {
+        "budget": 5,
+        "mean_cost": 5.0,
+        "median_cost": 5.0,
+        "std_cost": 0.0,
+        "risk": 0.2726532826912642,
+        "acc": 0.7273467173087358,
+        "bacc": 0.7034776119449788,
+        "stop_freq": 0.0,
+        "exhaust_freq": 1.0
+      }
+    }
+  },
+  "paired_comparisons": {},
+  "paired_tests": [
+    {
+      "risk_diff": -0.041237113402061855,
+      "risk_diff_ci95": [
+        -0.05274713409017767,
+        -0.030051683870386047
+      ],
+      "a_correct_b_wrong": 252,
+      "a_wrong_b_correct": 100,
+      "mcnemar_p": 2.867965511373114e-16,
+      "comparison": "V1_vs_Global_A0",
+      "budget": 4,
+      "type": "confirmatory",
+      "holm_rank": 1,
+      "holm_alpha": 0.002,
+      "holm_reject": true,
+      "holm_adjusted_p": 7.169913778432785e-15
+    },
+    {
+      "risk_diff": -0.03798155181768855,
+      "risk_diff_ci95": [
+        -0.04968779670906954,
+        -0.026662065621479308
+      ],
+      "a_correct_b_wrong": 239,
+      "a_wrong_b_correct": 99,
+      "mcnemar_p": 1.689536993861637e-14,
+      "comparison": "V1_vs_Global_A0",
+      "budget": 3,
+      "type": "confirmatory",
+      "holm_rank": 2,
+      "holm_alpha": 0.0020833333333333333,
+      "holm_reject": true,
+      "holm_adjusted_p": 4.0548887852679287e-13
+    },
+    {
+      "risk_diff": -0.0385241454150841,
+      "risk_diff_ci95": [
+        -0.05045713774641897,
+        -0.02750012335088999
+      ],
+      "a_correct_b_wrong": 248,
+      "a_wrong_b_correct": 106,
+      "mcnemar_p": 3.020458640684275e-14,
+      "comparison": "V1_vs_Global_A0",
+      "budget": 5,
+      "type": "confirmatory",
+      "holm_rank": 3,
+      "holm_alpha": 0.002173913043478261,
+      "holm_reject": true,
+      "holm_adjusted_p": 6.947054873573832e-13
+    },
+    {
+      "risk_diff": -0.03499728703201302,
+      "risk_diff_ci95": [
+        -0.04586454323296428,
+        -0.02399975849899869
+      ],
+      "a_correct_b_wrong": 232,
+      "a_wrong_b_correct": 103,
+      "mcnemar_p": 1.426278333902631e-12,
+      "comparison": "V1_vs_Global_A0",
+      "budget": 2,
+      "type": "confirmatory",
+      "holm_rank": 4,
+      "holm_alpha": 0.002272727272727273,
+      "holm_reject": true,
+      "holm_adjusted_p": 3.1378123345857883e-11
+    },
+    {
+      "risk_diff": -0.023060227889310905,
+      "risk_diff_ci95": [
+        -0.03378043705624134,
+        -0.012858495313312937
+      ],
+      "a_correct_b_wrong": 204,
+      "a_wrong_b_correct": 119,
+      "mcnemar_p": 2.605982372473536e-06,
+      "comparison": "V1_vs_Index_Fixed",
+      "budget": 2,
+      "type": "confirmatory",
+      "holm_rank": 5,
+      "holm_alpha": 0.002380952380952381,
+      "holm_reject": true,
+      "holm_adjusted_p": 5.4725629821944254e-05
+    },
+    {
+      "risk_diff": -0.021975040694519804,
+      "risk_diff_ci95": [
+        -0.03185774784508937,
+        -0.01154967037840235
+      ],
+      "a_correct_b_wrong": 203,
+      "a_wrong_b_correct": 122,
+      "mcnemar_p": 8.220823675950842e-06,
+      "comparison": "V1_vs_Global_A0",
+      "budget": 1,
+      "type": "confirmatory",
+      "holm_rank": 6,
+      "holm_alpha": 0.0025,
+      "holm_reject": true,
+      "holm_adjusted_p": 0.00016441647351901685
+    },
+    {
+      "risk_diff": -0.015192620727075421,
+      "risk_diff_ci95": [
+        -0.026310470156175093,
+        -0.0037635257281994103
+      ],
+      "a_correct_b_wrong": 199,
+      "a_wrong_b_correct": 143,
+      "mcnemar_p": 0.002884393266909772,
+      "comparison": "V1_vs_Index_Fixed",
+      "budget": 1,
+      "type": "confirmatory",
+      "holm_rank": 7,
+      "holm_alpha": 0.002631578947368421,
+      "holm_reject": false,
+      "holm_adjusted_p": 0.054803472071285664
+    },
+    {
+      "risk_diff": 0.010580575149213239,
+      "risk_diff_ci95": [
+        0.0010756207616840802,
+        0.020497850445691936
+      ],
+      "a_correct_b_wrong": 94,
+      "a_wrong_b_correct": 133,
+      "mcnemar_p": 0.011498896152305848,
+      "comparison": "V1_vs_Val_Ranked_Unstopped",
+      "budget": 5,
+      "type": "confirmatory",
+      "holm_rank": 8,
+      "holm_alpha": 0.002777777777777778,
+      "holm_reject": false,
+      "holm_adjusted_p": 0.20698013074150526
+    },
+    {
+      "risk_diff": -0.010851871947911014,
+      "risk_diff_ci95": [
+        -0.0211142560627728,
+        -0.0008558957219849185
+      ],
+      "a_correct_b_wrong": 158,
+      "a_wrong_b_correct": 118,
+      "mcnemar_p": 0.018735990760254954,
+      "comparison": "V1_vs_Greedy_Min_Entropy",
+      "budget": 2,
+      "type": "confirmatory",
+      "holm_rank": 9,
+      "holm_alpha": 0.0029411764705882353,
+      "holm_reject": false,
+      "holm_adjusted_p": 0.3185118429243342
+    },
+    {
+      "risk_diff": 0.009766684753119913,
+      "risk_diff_ci95": [
+        0.0002714054072277382,
+        0.019529461140560585
+      ],
+      "a_correct_b_wrong": 95,
+      "a_wrong_b_correct": 131,
+      "mcnemar_p": 0.019701207629429767,
+      "comparison": "V1_vs_Val_Ranked_ConfStop_Independent",
+      "budget": 5,
+      "type": "confirmatory",
+      "holm_rank": 10,
+      "holm_alpha": 0.003125,
+      "holm_reject": false,
+      "holm_adjusted_p": 0.3185118429243342
+    },
+    {
+      "risk_diff": -0.007325013564839935,
+      "risk_diff_ci95": [
+        -0.016449166250532294,
+        0.0016332424173529717
+      ],
+      "a_correct_b_wrong": 128,
+      "a_wrong_b_correct": 101,
+      "mcnemar_p": 0.08555038113722856,
+      "comparison": "V1_vs_Greedy_Min_Entropy",
+      "budget": 4,
+      "type": "confirmatory",
+      "holm_rank": 11,
+      "holm_alpha": 0.0033333333333333335,
+      "holm_reject": false,
+      "holm_adjusted_p": 1.0
+    },
+    {
+      "risk_diff": -0.006782419967444384,
+      "risk_diff_ci95": [
+        -0.01739217857559156,
+        0.003286027602217773
+      ],
+      "a_correct_b_wrong": 138,
+      "a_wrong_b_correct": 113,
+      "mcnemar_p": 0.12964136872938894,
+      "comparison": "V1_vs_Greedy_Min_Entropy",
+      "budget": 3,
+      "type": "confirmatory",
+      "holm_rank": 12,
+      "holm_alpha": 0.0035714285714285718,
+      "holm_reject": false,
+      "holm_adjusted_p": 1.0
+    },
+    {
+      "risk_diff": -0.006782419967444384,
+      "risk_diff_ci95": [
+        -0.017354115531650508,
+        0.0035216785860982163
+      ],
+      "a_correct_b_wrong": 157,
+      "a_wrong_b_correct": 132,
+      "mcnemar_p": 0.15790040983729778,
+      "comparison": "V1_vs_Index_Fixed",
+      "budget": 3,
+      "type": "confirmatory",
+      "holm_rank": 13,
+      "holm_alpha": 0.0038461538461538464,
+      "holm_reject": false,
+      "holm_adjusted_p": 1.0
+    },
+    {
+      "risk_diff": 0.0056972327726532825,
+      "risk_diff_ci95": [
+        -0.0034701893412441933,
+        0.014809286115406417
+      ],
+      "a_correct_b_wrong": 110,
+      "a_wrong_b_correct": 131,
+      "mcnemar_p": 0.1975352290003713,
+      "comparison": "V1_vs_Val_Ranked_Unstopped",
+      "budget": 1,
+      "type": "confirmatory",
+      "holm_rank": 14,
+      "holm_alpha": 0.004166666666666667,
+      "holm_reject": false,
+      "holm_adjusted_p": 1.0
+    },
+    {
+      "risk_diff": 0.0056972327726532825,
+      "risk_diff_ci95": [
+        -0.0034701893412441933,
+        0.014809286115406417
+      ],
+      "a_correct_b_wrong": 110,
+      "a_wrong_b_correct": 131,
+      "mcnemar_p": 0.1975352290003713,
+      "comparison": "V1_vs_Val_Ranked_ConfStop_Independent",
+      "budget": 1,
+      "type": "confirmatory",
+      "holm_rank": 15,
+      "holm_alpha": 0.004545454545454546,
+      "holm_reject": false,
+      "holm_adjusted_p": 1.0
+    },
+    {
+      "risk_diff": -0.005425935973955507,
+      "risk_diff_ci95": [
+        -0.01601998569089779,
+        0.005155412933867551
+      ],
+      "a_correct_b_wrong": 166,
+      "a_wrong_b_correct": 146,
+      "mcnemar_p": 0.282058234564097,
+      "comparison": "V1_vs_Index_Fixed",
+      "budget": 4,
+      "type": "confirmatory",
+      "holm_rank": 16,
+      "holm_alpha": 0.005,
+      "holm_reject": false,
+      "holm_adjusted_p": 1.0
+    },
+    {
+      "risk_diff": 0.0048833423765599565,
+      "risk_diff_ci95": [
+        -0.008887112439953425,
+        0.018221708526403486
+      ],
+      "a_correct_b_wrong": 149,
+      "a_wrong_b_correct": 167,
+      "mcnemar_p": 0.33891963067588843,
+      "comparison": "V1_vs_Val_Ranked_Unstopped",
+      "budget": 3,
+      "type": "confirmatory",
+      "holm_rank": 17,
+      "holm_alpha": 0.005555555555555556,
+      "holm_reject": false,
+      "holm_adjusted_p": 1.0
+    },
+    {
+      "risk_diff": 0.0048833423765599565,
+      "risk_diff_ci95": [
+        -0.008887112439953425,
+        0.018221708526403486
+      ],
+      "a_correct_b_wrong": 149,
+      "a_wrong_b_correct": 167,
+      "mcnemar_p": 0.33891963067588843,
+      "comparison": "V1_vs_Val_Ranked_ConfStop_Independent",
+      "budget": 3,
+      "type": "confirmatory",
+      "holm_rank": 18,
+      "holm_alpha": 0.00625,
+      "holm_reject": false,
+      "holm_adjusted_p": 1.0
+    },
+    {
+      "risk_diff": -0.0032555615843733042,
+      "risk_diff_ci95": [
+        -0.011905947638019351,
+        0.00546903844621581
+      ],
+      "a_correct_b_wrong": 115,
+      "a_wrong_b_correct": 103,
+      "mcnemar_p": 0.4563410015092821,
+      "comparison": "V1_vs_Greedy_Min_Entropy",
+      "budget": 5,
+      "type": "confirmatory",
+      "holm_rank": 19,
+      "holm_alpha": 0.0071428571428571435,
+      "holm_reject": false,
+      "holm_adjusted_p": 1.0
+    },
+    {
+      "risk_diff": 0.0024416711882799783,
+      "risk_diff_ci95": [
+        -0.007659904416393561,
+        0.012609134813662
+      ],
+      "a_correct_b_wrong": 110,
+      "a_wrong_b_correct": 119,
+      "mcnemar_p": 0.597141911163263,
+      "comparison": "V1_vs_Val_Ranked_Unstopped",
+      "budget": 4,
+      "type": "confirmatory",
+      "holm_rank": 20,
+      "holm_alpha": 0.008333333333333333,
+      "holm_reject": false,
+      "holm_adjusted_p": 1.0
+    },
+    {
+      "risk_diff": 0.0024416711882799783,
+      "risk_diff_ci95": [
+        -0.007659904416393561,
+        0.012609134813662
+      ],
+      "a_correct_b_wrong": 110,
+      "a_wrong_b_correct": 119,
+      "mcnemar_p": 0.597141911163263,
+      "comparison": "V1_vs_Val_Ranked_ConfStop_Independent",
+      "budget": 4,
+      "type": "confirmatory",
+      "holm_rank": 21,
+      "holm_alpha": 0.01,
+      "holm_reject": false,
+      "holm_adjusted_p": 1.0
+    },
+    {
+      "risk_diff": 0.0024416711882799783,
+      "risk_diff_ci95": [
+        -0.0065551036128407856,
+        0.012188777231372126
+      ],
+      "a_correct_b_wrong": 119,
+      "a_wrong_b_correct": 128,
+      "mcnemar_p": 0.6108226305974789,
+      "comparison": "V1_vs_Index_Fixed",
+      "budget": 5,
+      "type": "confirmatory",
+      "holm_rank": 22,
+      "holm_alpha": 0.0125,
+      "holm_reject": false,
+      "holm_adjusted_p": 1.0
+    },
+    {
+      "risk_diff": 0.002170374389582203,
+      "risk_diff_ci95": [
+        -0.01017068761365078,
+        0.014147620654616654
+      ],
+      "a_correct_b_wrong": 125,
+      "a_wrong_b_correct": 133,
+      "mcnemar_p": 0.6630644615631135,
+      "comparison": "V1_vs_Val_Ranked_ConfStop_Independent",
+      "budget": 2,
+      "type": "confirmatory",
+      "holm_rank": 23,
+      "holm_alpha": 0.016666666666666666,
+      "holm_reject": false,
+      "holm_adjusted_p": 1.0
+    },
+    {
+      "risk_diff": 0.002170374389582203,
+      "risk_diff_ci95": [
+        -0.01017068761365078,
+        0.014147620654616654
+      ],
+      "a_correct_b_wrong": 125,
+      "a_wrong_b_correct": 133,
+      "mcnemar_p": 0.6630644615631135,
+      "comparison": "V1_vs_Val_Ranked_Unstopped",
+      "budget": 2,
+      "type": "confirmatory",
+      "holm_rank": 24,
+      "holm_alpha": 0.025,
+      "holm_reject": false,
+      "holm_adjusted_p": 1.0
+    },
+    {
+      "risk_diff": -0.0005425935973955507,
+      "risk_diff_ci95": [
+        -0.011330145786880345,
+        0.009207797388016959
+      ],
+      "a_correct_b_wrong": 165,
+      "a_wrong_b_correct": 163,
+      "mcnemar_p": 0.9559777614333841,
+      "comparison": "V1_vs_Greedy_Min_Entropy",
+      "budget": 1,
+      "type": "confirmatory",
+      "holm_rank": 25,
+      "holm_alpha": 0.05,
+      "holm_reject": false,
+      "holm_adjusted_p": 1.0
+    }
+  ]
+}
